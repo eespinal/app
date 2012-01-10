@@ -3,18 +3,18 @@ using System.Linq;
 
 namespace app.web.core
 {
-  public class CommandRegistry:IFindCommands
+  public class CommandRegistry : IFindCommands
   {
-      readonly IEnumerable<IProcessASingleRequest> allTheCommands;
+    IEnumerable<IProcessASingleRequest> all_commands;
 
-      public CommandRegistry(IEnumerable<IProcessASingleRequest> all_the_commands )
-      {
-          allTheCommands = all_the_commands;
-      }
+    public CommandRegistry(IEnumerable<IProcessASingleRequest> all_commands)
+    {
+      this.all_commands = all_commands;
+    }
 
-      public IProcessASingleRequest get_the_command_that_can_process(IProvideDetailsToCommands the_request)
-      {
-          return allTheCommands.First(x => x.can_process(the_request));
-      }
+    public IProcessASingleRequest get_the_command_that_can_process(IProvideDetailsToCommands the_request)
+    {
+      return all_commands.First(x => x.can_process(the_request));
+    }
   }
 }
