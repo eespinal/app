@@ -2,16 +2,16 @@
 {
     public class FrontController : IProcessRequests
     {
-        readonly IFindCommands command_finder;
+        readonly IFindCommands command_registry;
 
-        public FrontController(IFindCommands commandFinder)
+        public FrontController(IFindCommands commandRegistry)
         {
-            command_finder = commandFinder;
+            command_registry = commandRegistry;
         }
 
         public void process(IProvideDetailsToCommands new_request)
         {
-            var command = command_finder.get_the_command_that_can_process(new_request);
+            var command = command_registry.get_the_command_that_can_process(new_request);
             command.process(new_request);
         }
     }
