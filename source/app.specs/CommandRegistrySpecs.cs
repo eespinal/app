@@ -43,6 +43,27 @@ namespace app.specs
         static IProvideDetailsToCommands the_request;
         static List<IProcessASingleRequest> all_the_commands;
       }
+      public class and_it_does_not_have_the_command
+      {
+        Establish c = () =>
+        {
+          missing_command = depends.on<IProcessASingleRequest>();
+          the_request = fake.an<IProvideDetailsToCommands>();
+          all_the_commands = Enumerable.Range(1,100).Select(x => fake.an<IProcessASingleRequest>()).ToList();
+          depends.on<IEnumerable<IProcessASingleRequest>>(all_the_commands);
+        };
+
+        Because b = () =>
+          result = sut.get_the_command_that_can_process(the_request);
+
+        It should_return_the_missing_command_to_the_caller = () =>
+          result.ShouldEqual(missing_command);
+
+        static IProcessASingleRequest result;
+        static IProvideDetailsToCommands the_request;
+        static List<IProcessASingleRequest> all_the_commands;
+        static IProcessASingleRequest missing_command;
+      }
     }
   }
 }
