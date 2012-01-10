@@ -117,6 +117,7 @@
     <Compile Include="CommandRegistrySpecs.cs" />
     <Compile Include="FrontControllerSpecs.cs" />
     <Compile Include="MessageGeneratorSpecs.cs" />
+    <Compile Include="RequestHandlerSpecs.cs" />
     <Compile Include="utility\ObjectFactory.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
