@@ -1,4 +1,6 @@
-﻿using System.Web;
+﻿using System.Collections.Generic;
+using System.Web;
+using app.web.application.catalogbrowing;
 
 namespace app.web.core.stubs
 {
@@ -7,7 +9,10 @@ namespace app.web.core.stubs
     public void display<Report>(Report report)
     {
       HttpContext.Current.Items.Add("blah", report);
-      HttpContext.Current.Server.Transfer("~/views/ProductBrowser.aspx", true);
+      if (report is IEnumerable<Product>)
+        HttpContext.Current.Server.Transfer("~/views/ProductBrowser.aspx", true);
+      else
+        HttpContext.Current.Server.Transfer("~/views/DepartmentBrowser.aspx", true);
     }
   }
 }
