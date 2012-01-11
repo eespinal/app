@@ -84,8 +84,11 @@
     <Compile Include="web\application\catalogbrowing\stubs\StubStoreCatalog.cs" />
     <Compile Include="web\application\catalogbrowing\ViewA.cs" />
     <Compile Include="web\core\aspnet\ASPHandler.cs" />
+    <Compile Include="web\core\aspnet\GetTheActiveHttpContext.cs" />
     <Compile Include="web\core\aspnet\ICreateViews.cs" />
+    <Compile Include="web\core\aspnet\IFindPathsToTemplates.cs" />
     <Compile Include="web\core\aspnet\WebFormDisplayEngine.cs" />
+    <Compile Include="web\core\aspnet\WebFormViewFactory.cs" />
     <Compile Include="web\core\CommandRegistry.cs" />
     <Compile Include="web\core\FrontController.cs" />
     <Compile Include="web\core\ICreateRequests.cs" />

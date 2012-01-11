@@ -1,22 +1,19 @@
-﻿using System.Web;
-
-namespace app.web.core.aspnet
+﻿namespace app.web.core.aspnet
 {
-    public class WebFormDisplayEngine : IDisplayReports
+  public class WebFormDisplayEngine : IDisplayReports
+  {
+    ICreateViews view_factory;
+    GetTheActiveHttpContext current_context_resolver;
+
+    public WebFormDisplayEngine(ICreateViews view_factory, GetTheActiveHttpContext current_context_resolver)
     {
-        readonly ICreateViews view_factory;
-        readonly HttpContext context;
-
-        public WebFormDisplayEngine(ICreateViews view_factory, HttpContext context)
-        {
-            this.view_factory = view_factory;
-            this.context = context;
-        }
-
-        public void display<Report>(Report report)
-        {
-            var view = view_factory.create_view_that_can_render(report);
-            view.ProcessRequest(context);
-        }
+      this.view_factory = view_factory;
+      this.current_context_resolver = current_context_resolver;
     }
+
+    public void display<Report>(Report report)
+    {
+      view_factory.create_view_that_can_render(report).ProcessRequest(current_context_resolver());
+    }
+  }
 }
