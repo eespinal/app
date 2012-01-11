@@ -11,7 +11,7 @@ namespace app.utility.containers
 
     public static IFetchDependencies fetch
     {
-      get { throw new System.NotImplementedException(); }
+      get { return facade_resolver(); }
     }
   }
 }
