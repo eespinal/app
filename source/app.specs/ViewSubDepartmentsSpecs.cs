@@ -20,27 +20,25 @@ namespace app.specs
       {
         display_engine = depends.on<IDisplayReports>();
         department_repository = depends.on<IGetDepartments>();
-        current_department = new Department {id = 1};
+        current_department = new Department();
         sub_departments = new List<Department> {new Department()};
         the_request = fake.an<IProvideDetailsToCommands>();
 
-        the_request.setup(x => x.department_id).Return(current_department.id);
-
-        current_department = new Department {id = 1};
-        department_repository.setup(x => x.get_sub_departments_of(current_department.id)).Return(sub_departments);
+        the_request.setup(x => x.map<Department>()).Return(current_department);
+        department_repository.setup(x => x.get_sub_departments_of(current_department)).Return(sub_departments);
       };
 
       Because b = () =>
         sut.process(the_request);
 
-      It should_display_the_main_departments = () =>
-        display_engine.received(x => x.display(current_department));
+      It should_display_the_sub_departments = () =>
+        display_engine.received(x => x.display(sub_departments));
 
       static IProvideDetailsToCommands the_request;
       static IGetDepartments department_repository;
       static IDisplayReports display_engine;
       static Department current_department;
-      static List<Department> sub_departments;
+      static IEnumerable<Department> sub_departments;
     }
   }
 }

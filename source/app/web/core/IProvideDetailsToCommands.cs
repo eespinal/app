@@ -2,6 +2,6 @@
 {
   public interface IProvideDetailsToCommands
   {
-	  int department_id { get; set; }
+    InputModel map<InputModel>();
   }
 }

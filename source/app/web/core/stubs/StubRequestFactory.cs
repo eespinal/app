@@ -1,4 +1,5 @@
 ﻿using System.Web;
+using app.web.application.catalogbrowing;
 
 namespace app.web.core.stubs
 {
@@ -11,7 +12,11 @@ namespace app.web.core.stubs
 
     class StubRequest : IProvideDetailsToCommands
     {
-    	public int department_id { get; set; }
+      public InputModel map<InputModel>()
+      {
+        object item = new Department();
+        return (InputModel) item;
+      }
     }
   }
 }
