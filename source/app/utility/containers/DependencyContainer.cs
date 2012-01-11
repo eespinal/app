@@ -4,9 +4,16 @@ namespace app.utility.containers
 {
   public class DependencyContainer : IFetchDependencies
   {
-    public Dependency an<Dependency>()
-    {
-      throw new NotImplementedException();
-    }
+      readonly IFindFactoriesForDependencies find_factories_for_dependencies;
+
+      public DependencyContainer(IFindFactoriesForDependencies find_factories_for_dependencies)
+      {
+          this.find_factories_for_dependencies = find_factories_for_dependencies;
+      }
+
+      public Dependency an<Dependency>()
+      {
+          return (Dependency) find_factories_for_dependencies.get_factory_that_can_create(typeof (Dependency)).create();
+      }
   }
 }

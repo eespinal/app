@@ -37,7 +37,7 @@ namespace app.specs
       static ICreateASingleDependency factory;
       static IFindFactoriesForDependencies factories;
     }
-  class TheDependency
+ public class TheDependency
   {
   }
   }
