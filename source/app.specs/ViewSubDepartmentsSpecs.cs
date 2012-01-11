@@ -7,10 +7,10 @@ using developwithpassion.specifications.rhinomocks;
 
 namespace app.specs
 {
-  [Subject( typeof( ViewSubDepartments ) )]
-	public class ViewSubDepartmentsSpecs
+  [Subject(typeof(ViewSubDepartments))]
+  public class ViewSubDepartmentsSpecs
   {
-	  public abstract class concern : Observes<ISupportAStory, ViewSubDepartments>
+    public abstract class concern : Observes<ISupportAStory, ViewSubDepartments>
     {
     }
 
@@ -20,17 +20,18 @@ namespace app.specs
       {
         display_engine = depends.on<IDisplayReports>();
         department_repository = depends.on<IGetDepartments>();
-      	current_department = new Department{ id = 1 };
-		sub_departments = new List<SubDepartment> { new SubDepartment() };
+        current_department = new Department {id = 1};
+        sub_departments = new List<Department> {new Department()};
         the_request = fake.an<IProvideDetailsToCommands>();
 
-      	current_department = new Department{ id = 1 };
-		department_repository.setup( x => x.get_sub_departments_of( current_department.id ) ).Return( sub_departments );
+        the_request.setup(x => x.department_id).Return(current_department.id);
+
+        current_department = new Department {id = 1};
+        department_repository.setup(x => x.get_sub_departments_of(current_department.id)).Return(sub_departments);
       };
 
       Because b = () =>
         sut.process(the_request);
-
 
       It should_display_the_main_departments = () =>
         display_engine.received(x => x.display(current_department));
@@ -39,7 +40,7 @@ namespace app.specs
       static IGetDepartments department_repository;
       static IDisplayReports display_engine;
       static Department current_department;
-      static List<SubDepartment> sub_departments;
+      static List<Department> sub_departments;
     }
   }
 }
