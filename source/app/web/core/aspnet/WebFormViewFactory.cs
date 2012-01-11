@@ -1,7 +1,4 @@
 ﻿using System.Web;
-using System.Web.Compilation;
-using app.utility;
-using app.web.core.stubs;
 
 namespace app.web.core.aspnet
 {
@@ -9,11 +6,6 @@ namespace app.web.core.aspnet
   {
     IFindPathsToTemplates template_path_registry;
     WebFormFactory web_form_factory;
-
-    public WebFormViewFactory():this(Stub.with<StubPathRegistry>(),
-      BuildManager.CreateInstanceFromVirtualPath)
-    {
-    }
 
     public WebFormViewFactory(IFindPathsToTemplates template_path_registry, WebFormFactory webFormFactory)
     {

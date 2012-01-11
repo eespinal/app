@@ -1,15 +1,9 @@
-using app.web.core.aspnet;
-
 namespace app.web.core
 {
   public class ViewA<Report> : ISupportAStory
   {
     IDisplayReports display_engine;
     IFetchA<Report> report_query;
-
-    public ViewA(IFetchA<Report>  query):this(new WebFormDisplayEngine(),query)
-    {
-    }
 
     public ViewA(IDisplayReports displayEngine, IFetchA<Report> report_query)
     {

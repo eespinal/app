@@ -1,5 +1,6 @@
 ﻿using System.Web;
 using app.utility;
+using app.utility.containers;
 using app.web.core.stubs;
 
 namespace app.web.core.aspnet
@@ -15,7 +16,7 @@ namespace app.web.core.aspnet
       this.request_factory = request_factory;
     }
 
-    public ASPHandler():this(new FrontController(),Stub.with<StubRequestFactory>())
+    public ASPHandler():this(Container.fetch.an<IProcessRequests>(),Container.fetch.an<ICreateRequests>())
     {
     }
 

@@ -78,6 +78,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MessageGenerator.cs" />
+    <Compile Include="utility\containers\Container.cs" />
+    <Compile Include="utility\containers\ContainerFacadeResolver.cs" />
+    <Compile Include="utility\containers\IFetchDependencies.cs" />
     <Compile Include="utility\Stub.cs" />
     <Compile Include="web\application\catalogbrowing\Department.cs" />
     <Compile Include="web\application\catalogbrowing\IFindInformationInTheStore.cs" />
@@ -107,6 +110,9 @@
     <Compile Include="web\core\ISupportAStory.cs" />
     <Compile Include="web\core\RequestCriteria.cs" />
     <Compile Include="web\core\RequestHandler.cs" />
+    <Compile Include="web\core\requestmatching\IBuildRequestMatchers.cs" />
+    <Compile Include="web\core\requestmatching\IncomingRequest.cs" />
+    <Compile Include="web\core\requestmatching\RequestBuilderFactory.cs" />
     <Compile Include="web\core\stubs\StubFakeSetOfCommands.cs" />
     <Compile Include="web\core\stubs\StubMissingCommand.cs" />
     <Compile Include="web\core\stubs\StubPathRegistry.cs" />
