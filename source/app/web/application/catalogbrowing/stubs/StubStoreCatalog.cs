@@ -10,10 +10,7 @@ namespace app.web.application.catalogbrowing.stubs
     {
       return Enumerable.Range(1, 10).Select(x =>
                                               {
-                                                var department = new Department{name = x.ToString("Main Deparment 0")};
-                                                department.SubDepartments = new StubStoreCatalog().get_sub_departments_of(department);
-                                                department.Products = new List<Product>();
-                                                return department;
+                                                return new Department{name = x.ToString("Main Deparment 0"),has_products = x % 3 == 0,has_sub_departments = x % 2 == 0};
                                               });
     }
 
@@ -21,10 +18,7 @@ namespace app.web.application.catalogbrowing.stubs
     {
       return Enumerable.Range(1, 100).Select(x =>
                                                {
-                                                 var department = new Department {name = x.ToString("Sub Deparment 0")};
-                                                 department.Products = get_products_of(department);
-                                                 department.SubDepartments = new List<Department>();
-                                                 return department;
+                                                return new Department{name = x.ToString("Sub Deparment 0"),has_products = x % 3 == 0,has_sub_departments = x % 2 == 0};
                                                });
     }
 

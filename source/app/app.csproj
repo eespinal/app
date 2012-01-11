@@ -84,6 +84,8 @@
     <Compile Include="web\application\catalogbrowing\stubs\StubStoreCatalog.cs" />
     <Compile Include="web\application\catalogbrowing\ViewA.cs" />
     <Compile Include="web\core\aspnet\ASPHandler.cs" />
+    <Compile Include="web\core\aspnet\ICreateViews.cs" />
+    <Compile Include="web\core\aspnet\WebFormDisplayEngine.cs" />
     <Compile Include="web\core\CommandRegistry.cs" />
     <Compile Include="web\core\FrontController.cs" />
     <Compile Include="web\core\ICreateRequests.cs" />
