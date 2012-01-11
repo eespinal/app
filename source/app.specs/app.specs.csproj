@@ -116,6 +116,7 @@
     <Compile Include="ASPHandlerSpecs.cs" />
     <Compile Include="CommandRegistrySpecs.cs" />
     <Compile Include="ContainerSpecs.cs" />
+    <Compile Include="DependencyContainerSpecs.cs" />
     <Compile Include="IncomingRequestSpecs.cs" />
     <Compile Include="ViewASpecs.cs" />
     <Compile Include="FrontControllerSpecs.cs" />

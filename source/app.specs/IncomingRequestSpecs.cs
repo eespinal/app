@@ -1,4 +1,5 @@
 ﻿using Machine.Specifications;
+using app.utility.containers;
 using app.web.core.requestmatching;
 using developwithpassion.specifications.rhinomocks;
 using developwithpassion.specifications.extensions;
@@ -10,7 +11,6 @@ namespace app.specs
   {
     public abstract class concern : Observes
     {
-
     }
 
     public class when_providing_access_to_the_request_match_gateway : concern
@@ -18,9 +18,15 @@ namespace app.specs
       Establish c = () =>
       {
         builder = fake.an<IBuildRequestMatchers>();
+        container = fake.an<IFetchDependencies>();
         RequestBuilderFactory factory = () => builder;
-        spec.change(() => IncomingRequest.factory).to(factory);
+
+        ContainerFacadeResolver resolver = () => container;
+        spec.change(() => Container.facade_resolver).to(resolver);
+
+        container.setup(x => x.an<IBuildRequestMatchers>()).Return(builder);
       };
+
       Because b = () =>
         result = IncomingRequest.to;
 
@@ -29,6 +35,7 @@ namespace app.specs
 
       static IBuildRequestMatchers result;
       static IBuildRequestMatchers builder;
+      static IFetchDependencies container;
     }
   }
 }
