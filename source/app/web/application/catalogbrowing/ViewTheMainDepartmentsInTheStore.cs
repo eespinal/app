@@ -7,15 +7,15 @@ namespace app.web.application.catalogbrowing
 {
   public class ViewTheMainDepartmentsInTheStore : ISupportAStory
   {
-    IGetEntities _entityRepository;
+    IFindInformationInTheStore _entityRepository;
     IDisplayReports display_engine;
 
-    public ViewTheMainDepartmentsInTheStore():this(Stub.with<StubEntityRepository>(),
+    public ViewTheMainDepartmentsInTheStore():this(Stub.with<StubStoreCatalog>(),
       Stub.with<StubDisplayEngine>())
     {
     }
 
-    public ViewTheMainDepartmentsInTheStore(IGetEntities _entityRepository, IDisplayReports display_engine)
+    public ViewTheMainDepartmentsInTheStore(IFindInformationInTheStore _entityRepository, IDisplayReports display_engine)
     {
       this._entityRepository = _entityRepository;
       this.display_engine = display_engine;

@@ -7,14 +7,14 @@ namespace app.web.application.catalogbrowing
 {
   public class ViewSubDepartments : ISupportAStory
   {
-    IGetEntities _entityRepository;
+    IFindInformationInTheStore _entityRepository;
     IDisplayReports display_engine;
 
-    public ViewSubDepartments() : this(Stub.with<StubEntityRepository>(), Stub.with<StubDisplayEngine>())
+    public ViewSubDepartments() : this(Stub.with<StubStoreCatalog>(), Stub.with<StubDisplayEngine>())
     {
     }
 
-    public ViewSubDepartments(IGetEntities _entityRepository, IDisplayReports display_engine)
+    public ViewSubDepartments(IFindInformationInTheStore _entityRepository, IDisplayReports display_engine)
     {
       this._entityRepository = _entityRepository;
       this.display_engine = display_engine;

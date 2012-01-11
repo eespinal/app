@@ -20,7 +20,7 @@ namespace app.specs
       Establish c = () =>
       {
         display_engine = depends.on<IDisplayReports>();
-        _entityRepository = depends.on<IGetEntities>();
+        _entityRepository = depends.on<IFindInformationInTheStore>();
         the_main_departments = new List<Department> {new Department()};
         the_request = fake.an<IProvideDetailsToCommands>();
 
@@ -35,7 +35,7 @@ namespace app.specs
         display_engine.received(x => x.display(the_main_departments));
 
       static IProvideDetailsToCommands the_request;
-      static IGetEntities _entityRepository;
+      static IFindInformationInTheStore _entityRepository;
       static IDisplayReports display_engine;
       static IEnumerable<Department> the_main_departments;
     }

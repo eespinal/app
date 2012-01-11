@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace app.web.application.catalogbrowing
 {
-  public interface IGetEntities
+  public interface IFindInformationInTheStore
   {
     IEnumerable<Department> get_the_main_departments();
     IEnumerable<Department> get_sub_departments_of(Department department);

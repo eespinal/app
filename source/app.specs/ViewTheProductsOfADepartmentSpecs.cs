@@ -8,9 +8,9 @@ using developwithpassion.specifications.rhinomocks;
 namespace app.specs
 {
   [Subject(typeof(ViewSubDepartments))]
-  public class ViewTheProductsOfTheDepartmentsSpecs
+  public class ViewTheProductsOfADepartmentSpecs
   {
-    public abstract class concern : Observes<ISupportAStory, ViewTheProductsOfTheDepartments>
+    public abstract class concern : Observes<ISupportAStory, ViewTheProductsOfADepartment>
     {
     }
 
@@ -21,7 +21,7 @@ namespace app.specs
         display_engine = depends.on<IDisplayReports>();
         current_department = new Department();
         the_request = fake.an<IProvideDetailsToCommands>();
-        entities_repository = depends.on<IGetEntities>();
+        entities_repository = depends.on<IFindInformationInTheStore>();
         products = new List<Product> {new Product()};
         entities_repository.setup(x => x.get_products_of(current_department)).Return(products);
 
@@ -38,7 +38,7 @@ namespace app.specs
       static IDisplayReports display_engine;
       static Department current_department;
       private static IEnumerable<Product> products;
-      private static IGetEntities entities_repository;
+      private static IFindInformationInTheStore entities_repository;
     }
   }
 }

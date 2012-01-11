@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace app.web.application.catalogbrowing.stubs
 {
-  public class StubEntityRepository : IGetEntities
+  public class StubStoreCatalog : IFindInformationInTheStore
   {
     public IEnumerable<Department> get_the_main_departments()
     {
