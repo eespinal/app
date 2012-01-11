@@ -2,16 +2,16 @@
 {
   public class WebFormDisplayEngine : IDisplayReports
   {
-      readonly ICreateViews createViews;
+    ICreateViews view_factory;
 
-      public WebFormDisplayEngine(ICreateViews createViews)
-      {
-          this.createViews = createViews;
-      }
+    public WebFormDisplayEngine(ICreateViews view_factory)
+    {
+      this.view_factory = view_factory;
+    }
 
-      public void display<Report>(Report report)
-      {
-          createViews.create_view_that_can_render(report);
-      }
+    public void display<Report>(Report report)
+    {
+      view_factory.create_view_that_can_render(report);
+    }
   }
 }

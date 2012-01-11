@@ -1,7 +1,9 @@
-﻿namespace app.web.core.aspnet
+﻿using System.Web;
+
+namespace app.web.core.aspnet
 {
   public interface ICreateViews
   {
-    void create_view_that_can_render<ReportModel>(ReportModel report);
+    IHttpHandler create_view_that_can_render<ReportModel>(ReportModel report);
   }
 }
