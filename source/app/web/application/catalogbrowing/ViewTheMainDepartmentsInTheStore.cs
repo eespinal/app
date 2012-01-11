@@ -7,23 +7,23 @@ namespace app.web.application.catalogbrowing
 {
   public class ViewTheMainDepartmentsInTheStore : ISupportAStory
   {
-    IGetDepartments department_repository;
+    IGetEntities _entityRepository;
     IDisplayReports display_engine;
 
-    public ViewTheMainDepartmentsInTheStore():this(Stub.with<StubDepartmentRepository>(),
+    public ViewTheMainDepartmentsInTheStore():this(Stub.with<StubEntityRepository>(),
       Stub.with<StubDisplayEngine>())
     {
     }
 
-    public ViewTheMainDepartmentsInTheStore(IGetDepartments department_repository, IDisplayReports display_engine)
+    public ViewTheMainDepartmentsInTheStore(IGetEntities _entityRepository, IDisplayReports display_engine)
     {
-      this.department_repository = department_repository;
+      this._entityRepository = _entityRepository;
       this.display_engine = display_engine;
     }
 
     public void process(IProvideDetailsToCommands the_request)
     {
-      display_engine.display(department_repository.get_the_main_departments());
+      display_engine.display(_entityRepository.get_the_main_departments());
     }
   }
 }

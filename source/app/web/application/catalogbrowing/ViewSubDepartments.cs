@@ -7,22 +7,22 @@ namespace app.web.application.catalogbrowing
 {
   public class ViewSubDepartments : ISupportAStory
   {
-    IGetDepartments department_repository;
+    IGetEntities _entityRepository;
     IDisplayReports display_engine;
 
-    public ViewSubDepartments() : this(Stub.with<StubDepartmentRepository>(), Stub.with<StubDisplayEngine>())
+    public ViewSubDepartments() : this(Stub.with<StubEntityRepository>(), Stub.with<StubDisplayEngine>())
     {
     }
 
-    public ViewSubDepartments(IGetDepartments department_repository, IDisplayReports display_engine)
+    public ViewSubDepartments(IGetEntities _entityRepository, IDisplayReports display_engine)
     {
-      this.department_repository = department_repository;
+      this._entityRepository = _entityRepository;
       this.display_engine = display_engine;
     }
 
     public void process(IProvideDetailsToCommands the_request)
     {
-      display_engine.display(department_repository.get_sub_departments_of(the_request.map<Department>()));
+      display_engine.display(_entityRepository.get_sub_departments_of(the_request.map<Department>()));
     }
   }
 }

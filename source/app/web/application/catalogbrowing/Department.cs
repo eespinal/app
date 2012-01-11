@@ -4,4 +4,9 @@ namespace app.web.application.catalogbrowing {
 		public string name { get; set; }
 	}
 
+	public class Product
+	{
+		public string name { get; set; }
+	}
+
 }

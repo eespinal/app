@@ -80,10 +80,11 @@
     <Compile Include="MessageGenerator.cs" />
     <Compile Include="utility\Stub.cs" />
     <Compile Include="web\application\catalogbrowing\Department.cs" />
-    <Compile Include="web\application\catalogbrowing\IGetDepartments.cs" />
-    <Compile Include="web\application\catalogbrowing\stubs\StubDepartmentRepository.cs" />
+    <Compile Include="web\application\catalogbrowing\IGetEntities.cs" />
+    <Compile Include="web\application\catalogbrowing\stubs\StubEntityRepository.cs" />
     <Compile Include="web\application\catalogbrowing\ViewSubDepartments.cs" />
     <Compile Include="web\application\catalogbrowing\ViewTheMainDepartmentsInTheStore.cs" />
+    <Compile Include="web\application\catalogbrowing\ViewTheProductsOfTheDepartments.cs" />
     <Compile Include="web\core\aspnet\ASPHandler.cs" />
     <Compile Include="web\core\CommandRegistry.cs" />
     <Compile Include="web\core\FrontController.cs" />
