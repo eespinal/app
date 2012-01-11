@@ -115,6 +115,7 @@
   <ItemGroup>
     <Compile Include="ASPHandlerSpecs.cs" />
     <Compile Include="CommandRegistrySpecs.cs" />
+    <Compile Include="ViewTheInformationInTheStoreSpecs.cs" />
     <Compile Include="ViewTheProductsOfADepartmentSpecs.cs" />
     <Compile Include="ViewSubDepartmentsSpecs.cs" />
     <Compile Include="FrontControllerSpecs.cs" />
