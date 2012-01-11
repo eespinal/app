@@ -80,7 +80,9 @@
     <Compile Include="MessageGenerator.cs" />
     <Compile Include="utility\containers\Container.cs" />
     <Compile Include="utility\containers\ContainerFacadeResolver.cs" />
+    <Compile Include="utility\containers\ICreateASingleDependency.cs" />
     <Compile Include="utility\containers\IFetchDependencies.cs" />
+    <Compile Include="utility\containers\IFindFactoriesForDependencies.cs" />
     <Compile Include="utility\Stub.cs" />
     <Compile Include="web\application\catalogbrowing\Department.cs" />
     <Compile Include="web\application\catalogbrowing\IFindInformationInTheStore.cs" />

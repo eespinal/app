@@ -1,15 +1,16 @@
-﻿namespace app.utility.containers
-{
-    public interface IFetchDependencies
-    {
-        Dependency an<Dependency>();
-    }
+﻿using System;
 
-    public class DependencyContainer : IFetchDependencies
+namespace app.utility.containers
+{
+  public interface IFetchDependencies
+  {
+    Dependency an<Dependency>();
+  }
+
+  public class DependencyContainer : IFetchDependencies
+  {
+    public Dependency an<Dependency>()
     {
-        public Dependency an<Dependency>()
-        {
-            throw new System.NotImplementedException();
-        }
     }
+  }
 }
