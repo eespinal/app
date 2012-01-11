@@ -31,7 +31,7 @@ namespace app.specs
       Because b = () =>
         sut.process(the_request);
 
-      It should_display_the_sub_departments = () =>
+      It should_display_the_products = () =>
         display_engine.received(x => x.display(products));
 
       static IProvideDetailsToCommands the_request;
