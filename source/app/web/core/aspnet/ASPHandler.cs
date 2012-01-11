@@ -1,4 +1,6 @@
 ﻿using System.Web;
+using app.utility;
+using app.web.core.stubs;
 
 namespace app.web.core.aspnet
 {
@@ -11,6 +13,10 @@ namespace app.web.core.aspnet
     {
       this.front_controller = front_controller;
       this.request_factory = request_factory;
+    }
+
+    public ASPHandler():this(new FrontController(),Stub.with<StubRequestFactory>())
+    {
     }
 
     public void ProcessRequest(HttpContext context)

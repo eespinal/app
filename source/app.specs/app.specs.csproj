@@ -118,6 +118,7 @@
     <Compile Include="FrontControllerSpecs.cs" />
     <Compile Include="MessageGeneratorSpecs.cs" />
     <Compile Include="RequestHandlerSpecs.cs" />
+    <Compile Include="StubSpecs.cs" />
     <Compile Include="utility\ObjectFactory.cs" />
     <Compile Include="ViewTheMainDepartmentsInTheStoreSpecs.cs" />
   </ItemGroup>

@@ -78,8 +78,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MessageGenerator.cs" />
+    <Compile Include="utility\Stub.cs" />
     <Compile Include="web\application\catalogbrowing\Department.cs" />
     <Compile Include="web\application\catalogbrowing\IGetDepartments.cs" />
+    <Compile Include="web\application\catalogbrowing\stubs\StubDepartmentRepository.cs" />
     <Compile Include="web\application\catalogbrowing\ViewTheMainDepartmentsInTheStore.cs" />
     <Compile Include="web\core\aspnet\ASPHandler.cs" />
     <Compile Include="web\core\CommandRegistry.cs" />
@@ -93,6 +95,10 @@
     <Compile Include="web\core\ISupportAStory.cs" />
     <Compile Include="web\core\RequestCriteria.cs" />
     <Compile Include="web\core\RequestHandler.cs" />
+    <Compile Include="web\core\stubs\StubDisplayEngine.cs" />
+    <Compile Include="web\core\stubs\StubFakeSetOfCommands.cs" />
+    <Compile Include="web\core\stubs\StubMissingCommand.cs" />
+    <Compile Include="web\core\stubs\StubRequestFactory.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

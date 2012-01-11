@@ -1,4 +1,7 @@
-﻿using app.web.core;
+﻿using app.utility;
+using app.web.application.catalogbrowing.stubs;
+using app.web.core;
+using app.web.core.stubs;
 
 namespace app.web.application.catalogbrowing
 {
@@ -6,6 +9,11 @@ namespace app.web.application.catalogbrowing
   {
     IGetDepartments department_repository;
     IDisplayReports display_engine;
+
+    public ViewTheMainDepartmentsInTheStore():this(Stub.with<StubDepartmentRepository>(),
+      Stub.with<StubDisplayEngine>())
+    {
+    }
 
     public ViewTheMainDepartmentsInTheStore(IGetDepartments department_repository, IDisplayReports display_engine)
     {
