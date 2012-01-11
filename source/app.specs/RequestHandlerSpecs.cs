@@ -1,6 +1,7 @@
 ﻿using Machine.Specifications;
 using app.web.core;
 using developwithpassion.specifications.rhinomocks;
+using developwithpassion.specifications.extensions;
 
 namespace app.specs
 {
@@ -12,6 +13,24 @@ namespace app.specs
     {
     }
 
+    public class when_processing_a_request : concern
+    {
+      Establish c = () =>
+      {
+        application_feature = depends.on<ISupportAStory>();
+        the_request = fake.an<IProvideDetailsToCommands>();
+      };
+
+      Because b = () =>
+        sut.process(the_request);
+
+
+      It should_trigger_the_application_feature = () =>
+        application_feature.received(x => x.process(the_request));
+
+      static IProvideDetailsToCommands the_request;
+      static ISupportAStory application_feature;
+    }
     public class when_determining_if_it_can_process_a_request : concern
     {
       Establish c = () =>
