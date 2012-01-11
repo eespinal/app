@@ -4,9 +4,4 @@
   {
     void display<Report>(Report report);
   }
-
-  public interface IGetReports<ReportType>
-  {
-    ReportType get_report(IProvideDetailsToCommands theRequest);
-  }
 }
