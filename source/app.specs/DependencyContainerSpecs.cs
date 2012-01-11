@@ -73,7 +73,7 @@ namespace app.specs
         static Exception new_exception;
       }
     }
-  class TheDependency
+ public class TheDependency
   {
   }
   }
