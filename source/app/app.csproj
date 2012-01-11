@@ -84,6 +84,7 @@
     <Compile Include="utility\containers\ICreateASingleDependency.cs" />
     <Compile Include="utility\containers\IFetchDependencies.cs" />
     <Compile Include="utility\containers\IFindFactoriesForDependencies.cs" />
+    <Compile Include="utility\containers\ItemCreationExceptionFactory.cs" />
     <Compile Include="utility\Stub.cs" />
     <Compile Include="web\application\catalogbrowing\Department.cs" />
     <Compile Include="web\application\catalogbrowing\IFindInformationInTheStore.cs" />
