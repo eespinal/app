@@ -11,6 +11,7 @@ namespace app.web.core.stubs
 
     class StubRequest : IProvideDetailsToCommands
     {
+    	public int department_id { get; set; }
     }
   }
 }
