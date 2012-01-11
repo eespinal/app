@@ -16,20 +16,19 @@ namespace app.utility.containers
 
     public Dependency an<Dependency>()
     {
-      var dependency_type = typeof(Dependency);
-      try
-      {
-        return (Dependency) find_factories_for_dependencies.get_factory_that_can_create(dependency_type).create();
-      }
-      catch (Exception ex)
-      {
-        throw item_creation_exception_factory(dependency_type, ex);
-      }
+        return (Dependency) an(typeof (Dependency));
     }
 
     public object an(Type dependency)
     {
-      throw new NotImplementedException();
+       try
+        {
+            return find_factories_for_dependencies.get_factory_that_can_create(dependency).create();
+        }
+        catch (Exception ex)
+        {
+            throw item_creation_exception_factory(dependency, ex);
+        }
     }
   }
 }
