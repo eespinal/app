@@ -1,4 +1,6 @@
-﻿namespace app.web.core.aspnet
+﻿using System.Web;
+
+namespace app.web.core.aspnet
 {
   public class WebFormDisplayEngine : IDisplayReports
   {
@@ -9,6 +11,10 @@
     {
       this.view_factory = view_factory;
       this.current_context_resolver = current_context_resolver;
+    }
+
+    public WebFormDisplayEngine():this(new WebFormViewFactory(),() => HttpContext.Current)
+    {
     }
 
     public void display<Report>(Report report)

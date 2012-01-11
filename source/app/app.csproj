@@ -82,10 +82,15 @@
     <Compile Include="web\application\catalogbrowing\Department.cs" />
     <Compile Include="web\application\catalogbrowing\IFindInformationInTheStore.cs" />
     <Compile Include="web\application\catalogbrowing\stubs\StubStoreCatalog.cs" />
-    <Compile Include="web\application\catalogbrowing\ViewA.cs" />
+    <Compile Include="web\application\catalogbrowing\ViewTheDepartmentsInADepartmentRequest.cs" />
+    <Compile Include="web\application\catalogbrowing\ViewTheMainDepartmentsRequest.cs" />
+    <Compile Include="web\application\catalogbrowing\ViewTheProductsInADepartmentRequest.cs" />
     <Compile Include="web\core\aspnet\ASPHandler.cs" />
     <Compile Include="web\core\aspnet\GetTheActiveHttpContext.cs" />
     <Compile Include="web\core\aspnet\ICreateViews.cs" />
+    <Compile Include="web\core\aspnet\IDisplayAReport.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="web\core\aspnet\IFindPathsToTemplates.cs" />
     <Compile Include="web\core\aspnet\WebFormDisplayEngine.cs" />
     <Compile Include="web\core\aspnet\WebFormFactory.cs" />
@@ -102,10 +107,11 @@
     <Compile Include="web\core\ISupportAStory.cs" />
     <Compile Include="web\core\RequestCriteria.cs" />
     <Compile Include="web\core\RequestHandler.cs" />
-    <Compile Include="web\core\stubs\StubDisplayEngine.cs" />
     <Compile Include="web\core\stubs\StubFakeSetOfCommands.cs" />
     <Compile Include="web\core\stubs\StubMissingCommand.cs" />
+    <Compile Include="web\core\stubs\StubPathRegistry.cs" />
     <Compile Include="web\core\stubs\StubRequestFactory.cs" />
+    <Compile Include="web\core\ViewA.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

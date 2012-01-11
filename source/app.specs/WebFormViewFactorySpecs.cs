@@ -21,13 +21,13 @@ namespace app.specs
       {
         template_path_registry = depends.on<IFindPathsToTemplates>();
         report = new AReport();
-        the_view = fake.an<IHttpHandler>();
+        the_view = fake.an<IDisplayA<AReport>>();
         path_from_registry = "blah.aspx";
         template_path_registry.setup(x => x.get_path_to_template_for<AReport>()).Return(path_from_registry);
         depends.on<WebFormFactory>((path,type) =>
         {
           path.ShouldEqual(path_from_registry);
-          type.ShouldEqual(typeof(Page));
+          type.ShouldEqual(typeof(IDisplayA<AReport>));
           return the_view;
         });
       };
@@ -36,6 +36,9 @@ namespace app.specs
         result = sut.create_view_that_can_render(report);
 
 
+      It should_populate_the_data_for_the_template_instance = () =>
+        the_view.report.ShouldEqual(report);
+        
       It should_return_the_template_instance_created_by_the_template_factory = () =>
         result.ShouldEqual(the_view);
 
@@ -44,7 +47,7 @@ namespace app.specs
       static IFindPathsToTemplates template_path_registry;
       static AReport report;
       static IHttpHandler result;
-      static IHttpHandler the_view;
+      static IDisplayA<AReport> the_view;
       static string path_from_registry;
     }
 

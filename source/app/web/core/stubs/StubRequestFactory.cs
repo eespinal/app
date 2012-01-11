@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Web;
+﻿using System.Web;
 using app.web.application.catalogbrowing;
 
 namespace app.web.core.stubs
@@ -16,7 +14,8 @@ namespace app.web.core.stubs
     {
       public InputModel map<InputModel>()
       {
-        throw new NotImplementedException();
+        object item = new Department();
+        return (InputModel) item;
       }
     }
   }

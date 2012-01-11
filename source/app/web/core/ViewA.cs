@@ -1,15 +1,13 @@
-using app.utility;
-using app.web.core;
-using app.web.core.stubs;
+using app.web.core.aspnet;
 
-namespace app.web.application.catalogbrowing
+namespace app.web.core
 {
   public class ViewA<Report> : ISupportAStory
   {
     IDisplayReports display_engine;
     IFetchA<Report> report_query;
 
-    public ViewA(IFetchA<Report>  query):this(Stub.with<StubDisplayEngine>(),query)
+    public ViewA(IFetchA<Report>  query):this(new WebFormDisplayEngine(),query)
     {
     }
 
