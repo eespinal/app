@@ -13,7 +13,6 @@ CodeFile="DepartmentBrowser.aspx.cs"
                <td><a href="<%= Url.to.run_conditionally<ViewTheDepartmentsInADepartmentRequest>()
                                       .or<ViewTheProductsInADepartmentRequest>()
                                       .based_on(department.has_products)
-                                      .include(department, config => config.include(x => x.id));
                
                %>"><%= department.name %></a></td>
            	  </tr>        
