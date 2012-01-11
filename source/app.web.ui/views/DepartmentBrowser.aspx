@@ -10,11 +10,11 @@ CodeFile="DepartmentBrowser.aspx.cs"
                   <% foreach (var department in this.report)
                      {%>
               <tr class="ListItem">
-               <td><a href="<%= Url.to.run_conditionally<ViewTheDepartmentsInADepartmentRequest>()
-                                      .or<ViewTheProductsInADepartmentRequest>()
-                                      .based_on(department.has_products)
+<%--               <td><a href="<%= Url.to.run_conditionally<ViewTheDepartmentsInADepartmentRequest>()--%>
+<%--                                      .or<ViewTheProductsInADepartmentRequest>()--%>
+<%--                                      .based_on(department.has_products)--%>
                
-               %>"><%= department.name %></a></td>
+<%--               %>"><%= department.name %></a></td>--%>
            	  </tr>        
               <% } %>
       	    </table>            

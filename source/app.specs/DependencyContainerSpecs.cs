@@ -17,9 +17,17 @@ namespace app.specs
    
     public class when_getting_a_dependency : concern
     {
+        Because of = () => result = sut.an<IStubDependency>();
+                         
+        It should_return_a_valid_instance = () => result.ShouldBeAn<IStubDependency>();
+
+        static IStubDependency result;
         
-      It first_observation = () =>        
-        
+    }
+
+    public interface IStubDependency
+    {
+         
     }
   }
 }
