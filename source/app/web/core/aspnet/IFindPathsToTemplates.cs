@@ -1,7 +1,9 @@
-﻿namespace app.web.core.aspnet
+﻿using System;
+
+namespace app.web.core.aspnet
 {
   public interface IFindPathsToTemplates
   {
-    void get_path_to_template_for<ReportModel>();
+    Uri  get_path_to_template_for<ReportModel>();
   }
 }
