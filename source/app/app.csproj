@@ -80,6 +80,7 @@
     <Compile Include="MessageGenerator.cs" />
     <Compile Include="utility\containers\Container.cs" />
     <Compile Include="utility\containers\ContainerFacadeResolver.cs" />
+    <Compile Include="utility\containers\DependencyContainer.cs" />
     <Compile Include="utility\containers\ICreateASingleDependency.cs" />
     <Compile Include="utility\containers\IFetchDependencies.cs" />
     <Compile Include="utility\containers\IFindFactoriesForDependencies.cs" />
