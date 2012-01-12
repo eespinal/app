@@ -10,6 +10,7 @@ CodeFile="DepartmentBrowser.aspx.cs"
                   <% foreach (var department in this.report)
                      {%>
               <tr class="ListItem">
+               <td><a href="blah.intellisys"><%= department.name %></a></td>
 <%--               <td><a href="<%= Url.to.run_conditionally<ViewTheDepartmentsInADepartmentRequest>()--%>
 <%--                                      .or<ViewTheProductsInADepartmentRequest>()--%>
 <%--                                      .based_on(department.has_products)--%>
