@@ -11,10 +11,9 @@ namespace app.tasks.startup
             this.configured_pipeline_builder_factory = configured_pipeline_builder_factory;
         }
 
-        public IComposePipelineConfiguration running<PipelineConfigType>()
+        public IComposePipelineConfiguration running<PipelineConfigType>() where PipelineConfigType : IRunAStartupStep
         {
-//            return configured_pipeline_builder_factory.create_configure_pipeline_builder().followed_by<PipelineConfigType>();
-            throw new NotImplementedException();
+            return configured_pipeline_builder_factory.create_configure_pipeline_builder<PipelineConfigType>();
         }
     }
 }

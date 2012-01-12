@@ -117,7 +117,6 @@
     <Compile Include="AutomaticDependencyFactorySpecs.cs" />
     <Compile Include="CommandRegistrySpecs.cs" />
     <Compile Include="ContainerSpecs.cs" />
-    <Compile Include="DependencyFactoriesProviderSpecs.cs" />
     <Compile Include="DependencyFactoryRegistrySpecs.cs" />
     <Compile Include="DependencyContainerSpecs.cs" />
     <Compile Include="GreediestCtorPickerSpecs.cs" />
@@ -127,10 +126,8 @@
     <Compile Include="SimpleFactorySpecs.cs" />
     <Compile Include="StartSpecs.cs" />
     <Compile Include="StartupExceptionsSpecs.cs" />
-    <Compile Include="StartupFacilitiesSpecs.cs" />
     <Compile Include="StartupPipelineBuilderSpecs.cs" />
     <Compile Include="StartupSpecs.cs" />
-    <Compile Include="TypeMatcherFactorySpecs.cs" />
     <Compile Include="ViewASpecs.cs" />
     <Compile Include="FrontControllerSpecs.cs" />
     <Compile Include="MessageGeneratorSpecs.cs" />

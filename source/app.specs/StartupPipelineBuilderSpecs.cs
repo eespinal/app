@@ -12,7 +12,6 @@ namespace app.specs
             Establish context = () =>
             {
                 configured_pipeline_builder = fake.an<IComposePipelineConfiguration>();
-                pipeline_builder_chain = fake.an<IComposePipelineConfiguration>();
                 configured_pipeline_builder_factory = depends.on<ICreateConfiguredPipelineBuilder>();
                 configured_pipeline_builder_factory.setup(x => x.create_configure_pipeline_builder<FirstPipelineConfiguration>()).Return(configured_pipeline_builder);
             };
@@ -20,13 +19,12 @@ namespace app.specs
             Because of = () => result = sut.running<FirstPipelineConfiguration>();
 
             It should_return_the_configured_pipeline_builder_for_the_current_pipeline =
-                () => result.ShouldEqual(pipeline_builder_chain);
+                () => result.ShouldEqual(configured_pipeline_builder);
 
 
             static IComposePipelineConfiguration result;
             static IComposePipelineConfiguration configured_pipeline_builder;
             static ICreateConfiguredPipelineBuilder configured_pipeline_builder_factory;
-            static IComposePipelineConfiguration pipeline_builder_chain;
         }
 
         public class FirstPipelineConfiguration : IRunAStartupStep

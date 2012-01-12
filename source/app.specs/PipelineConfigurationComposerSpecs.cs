@@ -13,20 +13,22 @@ namespace app.specs
             {
                 Establish context = () =>
                 {
+                    pipeline_configuration = fake.an<IComposePipelineConfiguration>();
                     first_step = new FirstPipelineConfiguration();
                     container = fake.an<IContainer>();
-                    second_pipeline_configuration = fake.an<IComposePipelineConfiguration>();
+                    factory = fake.an<ICreateConfiguredPipelineBuilder>();
                     depends.on(first_step);
                 };
 
-                Because of = () => result = sut.followed_by<FirstPipelineConfiguration>();
+                Because of = () => result = sut.followed_by<SecondPipelineConfiguration>();
 
 
-                It should_return_a_pipeline_configuration_composer_adding_the_pipeline_to_the_set = () => result.ShouldEqual(second_pipeline_configuration);
+                It should_return_a_pipeline_configuration_composer_adding_the_pipeline_to_the_set = () => result.ShouldEqual(pipeline_configuration);
 
 
                 static IComposePipelineConfiguration result;
-                static IComposePipelineConfiguration second_pipeline_configuration;
+                static IComposePipelineConfiguration pipeline_configuration;
+                static ICreateConfiguredPipelineBuilder factory;
                 static IContainer container;
                 static FirstPipelineConfiguration first_step;
             }
