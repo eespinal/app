@@ -78,14 +78,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MessageGenerator.cs" />
+    <Compile Include="tasks\startup\CombinedStep.cs" />
     <Compile Include="tasks\startup\ConfigureCoreItems.cs" />
     <Compile Include="tasks\startup\ConfigureTheFrontController.cs" />
     <Compile Include="tasks\startup\ConfiguringRoutes.cs" />
+    <Compile Include="tasks\startup\CreateConfiguredPipelineBuilder.cs" />
+    <Compile Include="tasks\startup\IComposePipelineConfiguration.cs" />
+    <Compile Include="tasks\startup\ICreateConfiguredPipelineBuilder.cs" />
     <Compile Include="tasks\startup\IProvideStartupFacilities.cs" />
     <Compile Include="tasks\startup\IRunAStartupStep.cs" />
+    <Compile Include="tasks\startup\IBuildAnStartupPipeline.cs" />
+    <Compile Include="tasks\startup\PipelineConfigurationComposer.cs" />
     <Compile Include="tasks\startup\Start.cs" />
     <Compile Include="tasks\startup\Startup.cs" />
     <Compile Include="tasks\startup\StartupExceptions.cs" />
+    <Compile Include="tasks\startup\StartupPipelineBuilder.cs" />
     <Compile Include="utility\containers\basic\AutomaticDependencyFactory.cs" />
     <Compile Include="utility\containers\basic\DependencyFactory.cs" />
     <Compile Include="utility\containers\basic\ICreateOneType.cs" />

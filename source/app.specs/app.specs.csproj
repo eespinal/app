@@ -122,8 +122,11 @@
     <Compile Include="GreediestCtorPickerSpecs.cs" />
     <Compile Include="IncomingRequestSpecs.cs" />
     <Compile Include="DependencyFactorySpecs.cs" />
+    <Compile Include="PipelineConfigurationComposerSpecs.cs" />
     <Compile Include="SimpleFactorySpecs.cs" />
+    <Compile Include="StartSpecs.cs" />
     <Compile Include="StartupExceptionsSpecs.cs" />
+    <Compile Include="StartupPipelineBuilderSpecs.cs" />
     <Compile Include="StartupSpecs.cs" />
     <Compile Include="ViewASpecs.cs" />
     <Compile Include="FrontControllerSpecs.cs" />
