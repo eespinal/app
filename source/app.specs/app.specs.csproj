@@ -117,6 +117,7 @@
     <Compile Include="AutomaticDependencyFactorySpecs.cs" />
     <Compile Include="CommandRegistrySpecs.cs" />
     <Compile Include="ContainerSpecs.cs" />
+    <Compile Include="CreateStartupStepsSpecs.cs" />
     <Compile Include="DependencyFactoriesProviderSpecs.cs" />
     <Compile Include="DependencyFactoryRegistrySpecs.cs" />
     <Compile Include="DependencyContainerSpecs.cs" />
