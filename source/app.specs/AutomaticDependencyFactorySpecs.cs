@@ -22,7 +22,6 @@ namespace app.specs
       {
         the_container = depends.on<IFetchDependencies>();
         pick_the_ctor_on_the_type = depends.on<IPickTheCtorOnTheType>();
-
         depends.on(typeof(OurTypeWithDependencies));
 
         the_connection = fake.an<IDbConnection>();
