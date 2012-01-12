@@ -86,10 +86,15 @@
     <Compile Include="tasks\startup\Start.cs" />
     <Compile Include="tasks\startup\Startup.cs" />
     <Compile Include="tasks\startup\StartupExceptions.cs" />
+    <Compile Include="tasks\startup\StartupFacilities.cs" />
     <Compile Include="utility\containers\basic\AutomaticDependencyFactory.cs" />
+    <Compile Include="utility\containers\basic\DependencyFactoriesProvider.cs" />
     <Compile Include="utility\containers\basic\DependencyFactory.cs" />
+    <Compile Include="utility\containers\basic\ICreateDependencyFactories.cs" />
     <Compile Include="utility\containers\basic\ICreateOneType.cs" />
+    <Compile Include="utility\containers\basic\ICreateTypeMatchers.cs" />
     <Compile Include="utility\containers\basic\SimpleFactory.cs" />
+    <Compile Include="utility\containers\basic\TypeMatcherFactory.cs" />
     <Compile Include="utility\containers\core\Container.cs" />
     <Compile Include="utility\containers\core\ContainerFacadeResolver.cs" />
     <Compile Include="utility\containers\basic\DependencyFactoryRegistry.cs" />

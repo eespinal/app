@@ -4,8 +4,8 @@ namespace app.utility.containers.basic
 {
   public class DependencyFactory:ICreateASingleDependency
   {
-    ICreateOneType real_factory;
-    Predicate<Type> type_match_condition;
+    public ICreateOneType real_factory;
+    public Predicate<Type> type_match_condition;
 
     public DependencyFactory(ICreateOneType real_factory, Predicate<Type> type_match_condition)
     {

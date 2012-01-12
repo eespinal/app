@@ -6,9 +6,9 @@ namespace app.utility.containers.basic
 {
   public class AutomaticDependencyFactory : ICreateOneType
   {
-    IFetchDependencies container;
-    IPickTheCtorOnTheType constructor_picker;
-    Type type_that_i_create;
+    public IFetchDependencies container;
+    public IPickTheCtorOnTheType constructor_picker;
+    public Type type_that_i_create;
 
     public AutomaticDependencyFactory(IFetchDependencies container, IPickTheCtorOnTheType constructor_picker,
                                       Type type_that_i_create)

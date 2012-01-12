@@ -1,10 +1,9 @@
-﻿using app.web.core.stubs;
-
-namespace app.tasks.startup
+﻿namespace app.tasks.startup
 {
   public interface IProvideStartupFacilities
   {
-    void register_factory_for<T, T1>();
-    void register_instance_for<T>(T instance);
+    void register_factory_for<Contract, Implementation>() where Implementation : Contract;
+    void register_factory_for<Contract>();
+    void register_instance_for<Contract>(Contract instance);
   }
 }
