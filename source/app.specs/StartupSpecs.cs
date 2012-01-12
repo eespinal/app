@@ -20,10 +20,7 @@ namespace app.specs
       Because b = () =>
         Startup.run();
 
-      It should_be_able_to_access_key_services = () =>
-      {
-        Container.fetch.an<IProcessRequests>().ShouldBeAn<FrontController>();
-      };
+      It should_be_able_to_access_key_services = () => Container.fetch.an<IProcessRequests>().ShouldBeAn<FrontController>();
         
     }
   }

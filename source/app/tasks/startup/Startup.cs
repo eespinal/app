@@ -28,6 +28,11 @@ namespace app.tasks.startup
       register_instance_for<IEnumerable<IProcessASingleRequest>>(Stub.with<StubFakeSetOfCommands>());
       register_instance_for<WebFormFactory>(BuildManager.CreateInstanceFromVirtualPath);
       register_instance_for<GetTheActiveHttpContext>(() => HttpContext.Current);
+      register_factory_for<IDisplayReports,WebFormDisplayEngine>();
+        register_factory_for<IProcessASingleRequest,StubMissingCommand>();
+        register_factory_for<ICreateRequests,StubRequestFactory >();
+        register_factory_for<ICreateViews,WebFormViewFactory >();
+        register_factory_for<IFindPathsToTemplates,StubPathRegistry >();
     }
 
     static void configure_core_items()
