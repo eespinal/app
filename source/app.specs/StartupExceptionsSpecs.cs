@@ -2,7 +2,6 @@
 using Machine.Specifications;
 using app.tasks.startup;
 using developwithpassion.specifications.rhinomocks;
-using developwithpassion.specifications.extensions;
 
 namespace app.specs
 {
@@ -34,8 +33,9 @@ namespace app.specs
         {
           the_exception = new Exception();
         };
+
         Because b = () =>
-          spec.catch_exception(() => StartupExceptions.dependency_creation_exception(typeof(OurType),the_exception))
+          spec.catch_exception(() => StartupExceptions.dependency_creation_exception(typeof(OurType), the_exception));
 
         It should_return_a_block_that_throws_an_exception_with_the_correct_information = () =>
         {
