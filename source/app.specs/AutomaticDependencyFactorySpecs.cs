@@ -43,6 +43,7 @@ namespace app.specs
       It should_create_the_type_and_fill_all_of_its_dependencies = () =>
       {
         var item = result.ShouldBeAn<OurTypeWithDependencies>();
+
         item.connection.ShouldEqual(the_connection);
         item.command.ShouldEqual(the_command);
         item.reader.ShouldEqual(the_reader);
