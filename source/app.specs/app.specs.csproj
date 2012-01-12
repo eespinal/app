@@ -119,6 +119,7 @@
     <Compile Include="ContainerSpecs.cs" />
     <Compile Include="DependencyFactoryRegistrySpecs.cs" />
     <Compile Include="DependencyContainerSpecs.cs" />
+    <Compile Include="GreediestCtorPickerSpecs.cs" />
     <Compile Include="IncomingRequestSpecs.cs" />
     <Compile Include="DependencyFactorySpecs.cs" />
     <Compile Include="SimpleFactorySpecs.cs" />

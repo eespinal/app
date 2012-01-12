@@ -88,6 +88,7 @@
     <Compile Include="utility\containers\basic\DependencyFactoryRegistry.cs" />
     <Compile Include="utility\containers\basic\DependencyContainer.cs" />
     <Compile Include="utility\containers\basic\ICreateASingleDependency.cs" />
+    <Compile Include="utility\containers\core\GreediestCtorPicker.cs" />
     <Compile Include="utility\containers\core\IFetchDependencies.cs" />
     <Compile Include="utility\containers\basic\IFindFactoriesForDependencies.cs" />
     <Compile Include="utility\containers\basic\ItemCreationExceptionFactory.cs" />
