@@ -78,6 +78,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MessageGenerator.cs" />
+    <Compile Include="tasks\startup\ConfigureCoreItems.cs" />
+    <Compile Include="tasks\startup\ConfigureTheFrontController.cs" />
+    <Compile Include="tasks\startup\ConfiguringRoutes.cs" />
+    <Compile Include="tasks\startup\IProvideStartupFacilities.cs" />
+    <Compile Include="tasks\startup\IRunAStartupStep.cs" />
+    <Compile Include="tasks\startup\Start.cs" />
     <Compile Include="tasks\startup\Startup.cs" />
     <Compile Include="tasks\startup\StartupExceptions.cs" />
     <Compile Include="utility\containers\basic\AutomaticDependencyFactory.cs" />
@@ -95,6 +101,7 @@
     <Compile Include="utility\containers\basic\ItemCreationExceptionFactory.cs" />
     <Compile Include="utility\containers\basic\MissingDependencyFactory.cs" />
     <Compile Include="utility\containers\core\IPickTheCtorOnTheType.cs" />
+    <Compile Include="utility\IRunABehaviour.cs" />
     <Compile Include="utility\Stub.cs" />
     <Compile Include="web\application\catalogbrowing\Department.cs" />
     <Compile Include="web\application\catalogbrowing\IFindInformationInTheStore.cs" />
