@@ -82,19 +82,21 @@
     <Compile Include="tasks\startup\ConfigureCoreItems.cs" />
     <Compile Include="tasks\startup\ConfigureTheFrontController.cs" />
     <Compile Include="tasks\startup\ConfiguringRoutes.cs" />
-    <Compile Include="tasks\startup\GetStartupPipelineBuilder.cs" />
-    <Compile Include="tasks\startup\IBuildStartupPipelines.cs" />
-    <Compile Include="tasks\startup\ICreateStartupSteps.cs" />
-    <Compile Include="tasks\startup\IProvideChainBuilders.cs" />
+    <Compile Include="tasks\startup\CreateConfiguredPipelineBuilder.cs" />
+    <Compile Include="tasks\startup\IComposePipelineConfiguration.cs" />
+    <Compile Include="tasks\startup\ICreateConfiguredPipelineBuilder.cs" />
     <Compile Include="tasks\startup\IProvideStartupFacilities.cs" />
     <Compile Include="tasks\startup\IRunAStartupStep.cs" />
-    <Compile Include="tasks\startup\ICreateStartupPipelineBuilders.cs" />
-    <Compile Include="tasks\startup\StartupPipelineBuilder.cs" />
+    <Compile Include="tasks\startup\IBuildAnStartupPipeline.cs" />
+    <Compile Include="tasks\startup\PipelineConfigurationComposer.cs" />
     <Compile Include="tasks\startup\Start.cs" />
     <Compile Include="tasks\startup\Startup.cs" />
-    <Compile Include="tasks\startup\StartupItems.cs" />
-    <Compile Include="tasks\startup\StartupPipelineProvider.cs" />
+    <Compile Include="tasks\startup\StartupExceptions.cs" />
+<<<<<<< HEAD
+    <Compile Include="tasks\startup\StartupPipelineBuilder.cs" />
+=======
     <Compile Include="tasks\startup\StartupFacilities.cs" />
+>>>>>>> db7b3b409ea5c3052cb4e48e1e243ae8110263c8
     <Compile Include="utility\containers\basic\AutomaticDependencyFactory.cs" />
     <Compile Include="utility\containers\basic\DependencyFactoriesProvider.cs" />
     <Compile Include="utility\containers\basic\DependencyFactory.cs" />

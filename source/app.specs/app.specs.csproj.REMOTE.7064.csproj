@@ -121,15 +121,11 @@
     <Compile Include="DependencyFactoryRegistrySpecs.cs" />
     <Compile Include="DependencyContainerSpecs.cs" />
     <Compile Include="GreediestCtorPickerSpecs.cs" />
-    <Compile Include="IConfigurePipelineSteps.cs" />
     <Compile Include="IncomingRequestSpecs.cs" />
     <Compile Include="DependencyFactorySpecs.cs" />
-    <Compile Include="StartupPipelineBuilderSpecs.cs" />
     <Compile Include="SimpleFactorySpecs.cs" />
-    <Compile Include="StartSpecs.cs" />
     <Compile Include="StartupExceptionsSpecs.cs" />
     <Compile Include="StartupFacilitiesSpecs.cs" />
-    <Compile Include="StartupPipelineProviderSpecs.cs" />
     <Compile Include="StartupSpecs.cs" />
     <Compile Include="TypeMatcherFactorySpecs.cs" />
     <Compile Include="ViewASpecs.cs" />
