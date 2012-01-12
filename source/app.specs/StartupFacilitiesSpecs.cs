@@ -18,6 +18,37 @@ namespace app.specs
 
     public class when_registering_a_factory : concern
     {
+      public class by_contract_only
+      {
+        Establish c = () =>
+        {
+          matcher = x => true;
+          factories_provider = depends.on<ICreateDependencyFactories>();
+          type_matcher_factory = depends.on<ICreateTypeMatchers>();
+          factories = new List<ICreateASingleDependency>();
+          the_factory = fake.an<ICreateOneType>();
+          factories_provider.setup(x => x.create_automatic_factory_for(typeof(AnImplementation))).Return(the_factory);
+          type_matcher_factory.setup(x => x.create_type_matcher_for(typeof(AnImplementation)))
+            .Return(matcher);
+
+          depends.on(factories);
+        };
+        Because b = () =>
+          sut.register_factory_for<AnImplementation>();
+
+        It should_add_an_automatic_factory_created_using_the_correct_registration_mechanism = () =>
+        {
+          var created = factories.First().ShouldBeAn<DependencyFactory>();
+          created.real_factory.ShouldEqual(the_factory);
+          created.type_match_condition.ShouldEqual(matcher);
+        };
+
+        static IList<ICreateASingleDependency> factories;
+        static ICreateOneType the_factory;
+        static ICreateDependencyFactories factories_provider;
+        static ICreateTypeMatchers type_matcher_factory;
+        static Predicate<Type> matcher;
+      }
       public class by_contract_and_implementation
       {
         Establish c = () =>

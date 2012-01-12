@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using app.utility.containers.basic;
 
 namespace app.tasks.startup
@@ -20,19 +19,23 @@ namespace app.tasks.startup
 
     public void register_factory_for<Contract, Implementation>() where Implementation : Contract
     {
-      dependencies.Add(new DependencyFactory(
-                         factories_provider.create_automatic_factory_for(typeof(Implementation)),
-                         type_match_factory.create_type_matcher_for(typeof(Contract))));
+      register_factory_for<Contract>(factories_provider.create_automatic_factory_for(typeof(Implementation)));
     }
 
     public void register_factory_for<Contract>()
     {
-      throw new NotImplementedException();
+      register_factory_for<Contract, Contract>();
     }
 
     public void register_instance_for<Contract>(Contract instance)
     {
-      throw new NotImplementedException();
+      register_factory_for<Contract>(factories_provider.create_specific_factory_for(instance));
+    }
+
+    void register_factory_for<Contract>(ICreateOneType factory)
+    {
+      dependencies.Add(new DependencyFactory(factory,
+                                             type_match_factory.create_type_matcher_for(typeof(Contract))));
     }
   }
 }
