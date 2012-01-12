@@ -123,6 +123,7 @@
     <Compile Include="IncomingRequestSpecs.cs" />
     <Compile Include="DependencyFactorySpecs.cs" />
     <Compile Include="SimpleFactorySpecs.cs" />
+    <Compile Include="StartupExceptionsSpecs.cs" />
     <Compile Include="StartupSpecs.cs" />
     <Compile Include="ViewASpecs.cs" />
     <Compile Include="FrontControllerSpecs.cs" />

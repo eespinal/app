@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using app.utility.containers.basic;
 using app.utility.containers.core;
-using app.web.core;
 
 namespace app.tasks.startup
 {
@@ -13,20 +11,14 @@ namespace app.tasks.startup
     public static void run()
     {
       all_factories = new List<ICreateASingleDependency>();
-      var container = new DependencyContainer(new DependencyFactoryRegistry(all_factories,
-                                                            type_with_no_factory =>
-                                                            {
-                                                              throw new NotImplementedException(
-                                                                string.Format("There is no factory for a {0}",
-                                                                              type_with_no_factory));
-                                                            }), (type, inner) =>
-                                                            {
-                                                              throw new NotImplementedException(
-                                                                "Failed to create the item");
-                                                            });
+
+      var container = new DependencyContainer(
+        new DependencyFactoryRegistry(all_factories,
+            StartupExceptions.dependency_factory_not_registered),
+            StartupExceptions.dependency_creation_exception);
+
       ContainerFacadeResolver resolver = () => container;
       Container.facade_resolver = resolver;
-
     }
   }
 }

@@ -79,6 +79,7 @@
   <ItemGroup>
     <Compile Include="MessageGenerator.cs" />
     <Compile Include="tasks\startup\Startup.cs" />
+    <Compile Include="tasks\startup\StartupExceptions.cs" />
     <Compile Include="utility\containers\basic\AutomaticDependencyFactory.cs" />
     <Compile Include="utility\containers\basic\DependencyFactory.cs" />
     <Compile Include="utility\containers\basic\ICreateOneType.cs" />
