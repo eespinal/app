@@ -1,29 +1,29 @@
 using System;
-using System.Reflection;
-using System.Linq;
-using app.utility.containers.core;
 
 namespace app.tasks.startup
 {
-    public class CreateStartupSteps : ICreateStartupSteps
+  public class CreateStartupSteps : ICreateStartupSteps
+  {
+    IProvideStartupFacilities startup_facility;
+    StartupConventionNotFollowedExceptionFactory factory;
+
+    public CreateStartupSteps(IProvideStartupFacilities startup_facility,
+                              StartupConventionNotFollowedExceptionFactory factory)
     {
-        IProvideStartupFacilities startup_facility;
-
-        public CreateStartupSteps(IProvideStartupFacilities startup_facility)
-        {
-            this.startup_facility = startup_facility;
-        }
-
-        public IRunAStartupStep create_from(Type startup_step_type)
-        {
-            var constructors = startup_step_type.GetConstructors();
-            validate_constructors(constructors);
-            var instance = constructors.First().Invoke(new[] {startup_facility}) as IRunAStartupStep;
-            return instance;
-        }
-
-        void validate_constructors(ConstructorInfo[] constructors)
-        {
-        }
+      this.startup_facility = startup_facility;
+      this.factory = factory;
     }
+
+    public IRunAStartupStep create_from(Type startup_step_type)
+    {
+      try
+      {
+        return (IRunAStartupStep) Activator.CreateInstance(startup_step_type, startup_facility);
+      }
+      catch
+      {
+        throw factory(startup_step_type);
+      }
+    }
+  }
 }

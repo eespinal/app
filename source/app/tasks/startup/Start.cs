@@ -1,13 +1,8 @@
-﻿using System;
-
-namespace app.tasks.startup
+﻿namespace app.tasks.startup
 {
   public class Start
   {
-    public static GetStartupPipelineBuilder factory = () =>
-    {
-      throw new NotImplementedException("You need to set this in the bootstrapper");
-    };
+    public static GetStartupPipelineBuilder factory = StartupItems.for_pipeline.pipeline_builder_factory;
 
     public static ICreateStartupPipelineBuilders by
     {

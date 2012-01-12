@@ -14,8 +14,18 @@ namespace app.tasks.startup
 
       public static ItemCreationExceptionFactory dependency_creation = (type, inner) =>
       {
-        throw new NotImplementedException(String.Format("The type {0} had errors when being created", type.Name),inner);
+        throw new NotImplementedException(String.Format("The type {0} had errors when being created", type.Name), inner);
+      };
+    }
+
+    public class for_pipeline
+    {
+      public static GetStartupPipelineBuilder pipeline_builder_factory = () =>
+      {
+        throw new NotImplementedException();
       };
     }
   }
+}
+
 }

@@ -90,6 +90,7 @@
     <Compile Include="tasks\startup\IProvideStartupFacilities.cs" />
     <Compile Include="tasks\startup\IRunAStartupStep.cs" />
     <Compile Include="tasks\startup\ICreateStartupPipelineBuilders.cs" />
+    <Compile Include="tasks\startup\StartupConventionNotFollowedExceptionFactory.cs" />
     <Compile Include="tasks\startup\StartupPipelineBuilder.cs" />
     <Compile Include="tasks\startup\Start.cs" />
     <Compile Include="tasks\startup\Startup.cs" />
