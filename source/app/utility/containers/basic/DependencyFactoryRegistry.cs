@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace app.utility.containers
+namespace app.utility.containers.basic
 {
   public class DependencyFactoryRegistry : IFindFactoriesForDependencies
   {

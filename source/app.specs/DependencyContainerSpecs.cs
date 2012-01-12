@@ -1,6 +1,8 @@
 ﻿using System;
 using Machine.Specifications;
 using app.utility.containers;
+using app.utility.containers.basic;
+using app.utility.containers.core;
 using developwithpassion.specifications.extensions;
 using developwithpassion.specifications.rhinomocks;
 

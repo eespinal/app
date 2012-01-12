@@ -1,5 +1,6 @@
 ﻿using Machine.Specifications;
 using app.utility.containers;
+using app.utility.containers.core;
 using developwithpassion.specifications.rhinomocks;
 
 namespace app.specs

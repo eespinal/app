@@ -1,6 +1,7 @@
 ﻿using System.Web;
 using app.utility;
 using app.utility.containers;
+using app.utility.containers.core;
 using app.web.core.stubs;
 
 namespace app.web.core.aspnet

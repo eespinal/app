@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace app.utility.containers
+namespace app.utility.containers.core
 {
   public class Container
   {

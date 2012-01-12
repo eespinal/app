@@ -1,6 +1,7 @@
 using System;
+using app.utility.containers.core;
 
-namespace app.utility.containers
+namespace app.utility.containers.basic
 {
   public class DependencyContainer : IFetchDependencies
   {
