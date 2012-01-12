@@ -30,7 +30,7 @@ namespace app.specs
           result = sut.get_factory_that_can_create(dependency_type);
 
         It should_return_the_factory_that_can_create_the_dependency = () =>
-          result.ShouldEqual(the_factory);
+          result.ShouldEqual(the_factory); 
 
         private static ICreateASingleDependency result;
         private static ICreateASingleDependency the_factory;
