@@ -5,7 +5,7 @@ using developwithpassion.specifications.rhinomocks;
 
 namespace app.specs
 {
-  [Subject(typeof(StartupExceptions))]
+  [Subject(typeof(StartupItems))]
   public class StartupExceptionsSpecs
   {
     public abstract class concern : Observes
@@ -17,7 +17,7 @@ namespace app.specs
       public class for_a_factory_not_registered
       {
         Because b = () =>
-          spec.catch_exception(() => StartupExceptions.dependency_factory_not_registered(typeof(OurType)));
+          spec.catch_exception(() => StartupItems.exception_factories.dependency_factory_not_registered(typeof(OurType)));
 
         It should_return_a_block_that_throws_an_exception_with_the_correct_information = () =>
         {
@@ -34,7 +34,7 @@ namespace app.specs
         };
 
         Because b = () =>
-          spec.catch_exception(() => StartupExceptions.dependency_creation_exception(typeof(OurType), the_exception));
+          spec.catch_exception(() => StartupItems.exception_factories.dependency_creation(typeof(OurType), the_exception));
 
         It should_return_a_block_that_throws_an_exception_with_the_correct_information = () =>
         {
