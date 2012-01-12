@@ -16,6 +16,23 @@ namespace app.specs
     {
     }
 
+    public class when_iterated:concern
+    {
+      Establish c = () =>
+      {
+        IList<ICreateASingleDependency> items = Enumerable.Range(1,100).Select(x => fake.an<ICreateASingleDependency>()).ToList();
+        depends.on(items);
+      };
+      Because b = () =>
+        result = sut;
+
+      It should_return_all_of_its_factories = () =>
+        result.Count().ShouldEqual(100);
+
+      static IEnumerable<ICreateASingleDependency> result;
+
+
+    }
     public class when_registering_a_factory : concern
     {
       public class by_contract_only

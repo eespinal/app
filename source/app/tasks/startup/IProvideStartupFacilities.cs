@@ -1,6 +1,9 @@
-﻿namespace app.tasks.startup
+﻿using System.Collections.Generic;
+using app.utility.containers.basic;
+
+namespace app.tasks.startup
 {
-  public interface IProvideStartupFacilities
+  public interface IProvideStartupFacilities:IEnumerable<ICreateASingleDependency>
   {
     void register_factory_for<Contract, Implementation>() where Implementation : Contract;
     void register_factory_for<Contract>();
