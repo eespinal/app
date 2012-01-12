@@ -1,4 +1,5 @@
 ﻿using Machine.Specifications;
+using app.specs.utility;
 using app.utility.containers;
 using app.utility.containers.core;
 using app.web.core.requestmatching;
@@ -18,14 +19,7 @@ namespace app.specs
     {
       Establish c = () =>
       {
-        builder = fake.an<IBuildRequestMatchers>();
-        container = fake.an<IFetchDependencies>();
-        RequestBuilderFactory factory = () => builder;
-
-        ContainerFacadeResolver resolver = () => container;
-        spec.change(() => Container.facade_resolver).to(resolver);
-
-        container.setup(x => x.an<IBuildRequestMatchers>()).Return(builder);
+        builder = ObjectFactory.container.scaffold(spec, fake).an<IBuildRequestMatchers>();
       };
 
       Because b = () =>

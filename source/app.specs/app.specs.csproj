@@ -114,12 +114,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ASPHandlerSpecs.cs" />
+    <Compile Include="AutomaticDependencyFactorySpecs.cs" />
     <Compile Include="CommandRegistrySpecs.cs" />
     <Compile Include="ContainerSpecs.cs" />
     <Compile Include="DependencyFactoryRegistrySpecs.cs" />
     <Compile Include="DependencyContainerSpecs.cs" />
     <Compile Include="IncomingRequestSpecs.cs" />
     <Compile Include="DependencyFactorySpecs.cs" />
+    <Compile Include="SimpleFactorySpecs.cs" />
+    <Compile Include="StartupSpecs.cs" />
     <Compile Include="ViewASpecs.cs" />
     <Compile Include="FrontControllerSpecs.cs" />
     <Compile Include="MessageGeneratorSpecs.cs" />
