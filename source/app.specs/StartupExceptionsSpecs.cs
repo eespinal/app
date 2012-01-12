@@ -10,7 +10,6 @@ namespace app.specs
   {
     public abstract class concern : Observes
     {
-
     }
 
     public class when_accessing_a_startup_exception : concern
@@ -25,8 +24,8 @@ namespace app.specs
           var item = spec.exception_thrown;
           item.Message.ShouldContain(typeof(OurType).Name);
         };
-           
       }
+
       public class for_a_dependency_creation_error
       {
         Establish c = () =>
@@ -46,11 +45,10 @@ namespace app.specs
 
         static Exception the_exception;
       }
-        
-  class OurType
-  {
-  }
+
+      public class OurType
+      {
+      }
     }
   }
-
 }

@@ -12,7 +12,7 @@ namespace app.tasks.startup
 
     public static ItemCreationExceptionFactory dependency_creation_exception = (type, inner) =>
     {
-      throw new NotImplementedException(string.Format("The type {0} had errors when being created", type.Name));
+      throw new NotImplementedException(string.Format("The type {0} had errors when being created", type.Name),inner);
     };
   }
 }
