@@ -4,7 +4,9 @@
   {
     public static void run()
     {
-      Start.by.running<ConfigureTheFrontController>()
+      Start.by.running<ConfigureCoreServices>()
+        .followed_by<ConfigureTheFrontController>()
+        .followed_by<ConfigureQueries>()
         .end_with<ConfiguringRoutes>();
     }
   }

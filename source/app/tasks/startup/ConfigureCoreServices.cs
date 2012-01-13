@@ -16,6 +16,7 @@ namespace app.tasks.startup
       var container = StartupItems.for_pipeline.create_main_container_using(startup_facilities);
       ContainerFacadeResolver resolver = () => container;
       Container.facade_resolver = resolver;
+      startup_facilities.register_instance_for(container);
     }
   }
 }

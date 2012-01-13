@@ -40,17 +40,22 @@ namespace app.specs.utility
           this.fake = fake;
         }
 
-        public TheDependency an<TheDependency>() where TheDependency : class
+        public TheDependency an<TheDependency>(TheDependency instance) 
         {
           var the_container = fake.an<IFetchDependencies>();
           ContainerFacadeResolver resolver = () => the_container;
 
-          var dependency = fake.an<TheDependency>();
+          var dependency = instance;
           the_container.setup(x => x.an<TheDependency>()).Return(dependency);
 
           spec.change(() => Container.facade_resolver).to(resolver);
 
           return dependency;
+        }
+
+        public TheDependency an<TheDependency>() where TheDependency : class
+        {
+          return an(fake.an<TheDependency>());
         }
       }
 

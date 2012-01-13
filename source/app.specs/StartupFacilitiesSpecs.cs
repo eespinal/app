@@ -16,6 +16,23 @@ namespace app.specs
     {
     }
 
+    public class when_resolving_an_item:concern
+    {
+      Establish c = () =>
+      {
+        IList<ICreateASingleDependency> items = Enumerable.Range(1,100).Select(x => fake.an<ICreateASingleDependency>()).ToList();
+        depends.on(items);
+      };
+      Because b = () =>
+        result = sut;
+
+      It should_resolve_the_item_from_its_container = () =>
+        result.Count().ShouldEqual(100);
+
+      static IEnumerable<ICreateASingleDependency> result;
+
+
+    }
     public class when_iterated:concern
     {
       Establish c = () =>

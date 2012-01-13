@@ -43,6 +43,7 @@ namespace app.tasks.startup
       register_factory_for<Contract>(factories_provider.create_specific_factory_for(instance));
     }
 
+
     void register_factory_for<Contract>(ICreateOneType factory)
     {
       all_factories.Add(new DependencyFactory(factory,
