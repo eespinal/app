@@ -4,7 +4,7 @@ namespace app.web.core.requestmatching
 {
   public class IncomingRequest
   {
-    public static IBuildRequestMatchers to
+    public static IBuildRequestMatchers was
     {
       get { return Container.fetch.an<IBuildRequestMatchers>(); }
     }

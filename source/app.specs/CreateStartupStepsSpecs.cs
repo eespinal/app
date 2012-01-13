@@ -9,11 +9,11 @@ using developwithpassion.specifications.rhinomocks;
 
 namespace app.specs
 {
-  [Subject(typeof(CreateStartupSteps))]
+  [Subject(typeof(StartupStepFactory))]
   public class CreateStartupStepsSpecs
   {
     public abstract class concern : Observes<ICreateStartupSteps,
-                                      CreateStartupSteps>
+                                      StartupStepFactory>
     {
     }
 

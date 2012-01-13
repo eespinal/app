@@ -21,7 +21,6 @@ namespace app.tasks.startup
     {
       startup_facility.register_factory_for<IProcessRequests, FrontController>();
       startup_facility.register_factory_for<IFindCommands, CommandRegistry>();
-      startup_facility.register_instance_for<IEnumerable<IProcessASingleRequest>>(Stub.with<StubFakeSetOfCommands>());
       startup_facility.register_instance_for<WebFormFactory>(BuildManager.CreateInstanceFromVirtualPath);
       startup_facility.register_instance_for<GetTheActiveHttpContext>(() => HttpContext.Current);
       startup_facility.register_factory_for<IDisplayReports, WebFormDisplayEngine>();

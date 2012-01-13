@@ -5,9 +5,9 @@
     ISupportAStory application_feature;
     RequestCriteria request_criteria;
 
-    public RequestHandler(RequestCriteria requestCriteria, ISupportAStory application_feature)
+    public RequestHandler(RequestCriteria request_criteria, ISupportAStory application_feature)
     {
-      request_criteria = requestCriteria;
+      this.request_criteria = request_criteria;
       this.application_feature = application_feature;
     }
 

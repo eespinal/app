@@ -1,10 +1,8 @@
 ﻿using Machine.Specifications;
 using app.specs.utility;
-using app.utility.containers;
 using app.utility.containers.core;
 using app.web.core.requestmatching;
 using developwithpassion.specifications.rhinomocks;
-using developwithpassion.specifications.extensions;
 
 namespace app.specs
 {
@@ -23,7 +21,7 @@ namespace app.specs
       };
 
       Because b = () =>
-        result = IncomingRequest.to;
+        result = IncomingRequest.was;
 
       It should_return_the_gateway_configured_at_startup = () =>
         result.ShouldEqual(builder);

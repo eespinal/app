@@ -2,12 +2,12 @@ using System;
 
 namespace app.tasks.startup
 {
-  public class CreateStartupSteps : ICreateStartupSteps
+  public class StartupStepFactory : ICreateStartupSteps
   {
     IProvideStartupFacilities startup_facility;
     StartupConventionNotFollowedExceptionFactory factory;
 
-    public CreateStartupSteps(IProvideStartupFacilities startup_facility,
+    public StartupStepFactory(IProvideStartupFacilities startup_facility,
                               StartupConventionNotFollowedExceptionFactory factory)
     {
       this.startup_facility = startup_facility;

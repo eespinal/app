@@ -2,6 +2,6 @@
 {
   public interface IBuildRequestMatchers
   {
-     
+    RequestCriteria made_for<RequestType>();
   }
 }

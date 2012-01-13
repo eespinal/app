@@ -79,10 +79,9 @@
   <ItemGroup>
     <Compile Include="MessageGenerator.cs" />
     <Compile Include="tasks\startup\CombinedStep.cs" />
-    <Compile Include="tasks\startup\ConfigureCoreItems.cs" />
     <Compile Include="tasks\startup\ConfigureTheFrontController.cs" />
     <Compile Include="tasks\startup\ConfiguringRoutes.cs" />
-    <Compile Include="tasks\startup\CreateStartupSteps.cs" />
+    <Compile Include="tasks\startup\StartupStepFactory.cs" />
     <Compile Include="tasks\startup\GetStartupPipelineBuilder.cs" />
     <Compile Include="tasks\startup\IBuildStartupPipelines.cs" />
     <Compile Include="tasks\startup\ICreateStartupSteps.cs" />
@@ -90,7 +89,7 @@
     <Compile Include="tasks\startup\IProvideStartupFacilities.cs" />
     <Compile Include="tasks\startup\IRunAStartupStep.cs" />
     <Compile Include="tasks\startup\ICreateStartupPipelineBuilders.cs" />
-    <Compile Include="tasks\startup\ProvideChainBuilders.cs" />
+    <Compile Include="tasks\startup\ChainBuilderProvider.cs" />
     <Compile Include="tasks\startup\StartupConventionNotFollowedExceptionFactory.cs" />
     <Compile Include="tasks\startup\StartupPipelineBuilder.cs" />
     <Compile Include="tasks\startup\Start.cs" />
@@ -104,6 +103,7 @@
     <Compile Include="utility\containers\basic\ICreateDependencyFactories.cs" />
     <Compile Include="utility\containers\basic\ICreateOneType.cs" />
     <Compile Include="utility\containers\basic\ICreateTypeMatchers.cs" />
+    <Compile Include="utility\containers\basic\LazyContainer.cs" />
     <Compile Include="utility\containers\basic\SimpleFactory.cs" />
     <Compile Include="utility\containers\basic\TypeMatcherFactory.cs" />
     <Compile Include="utility\containers\core\Container.cs" />
@@ -144,13 +144,14 @@
     <Compile Include="web\core\IProcessASingleRequest.cs" />
     <Compile Include="web\core\IProcessRequests .cs" />
     <Compile Include="web\core\IProvideDetailsToCommands.cs" />
+    <Compile Include="web\core\IRegisterRoutes .cs" />
     <Compile Include="web\core\ISupportAStory.cs" />
     <Compile Include="web\core\RequestCriteria.cs" />
     <Compile Include="web\core\RequestHandler.cs" />
     <Compile Include="web\core\requestmatching\IBuildRequestMatchers.cs" />
     <Compile Include="web\core\requestmatching\IncomingRequest.cs" />
     <Compile Include="web\core\requestmatching\RequestBuilderFactory.cs" />
-    <Compile Include="web\core\stubs\StubFakeSetOfCommands.cs" />
+    <Compile Include="web\core\Routes.cs" />
     <Compile Include="web\core\stubs\StubMissingCommand.cs" />
     <Compile Include="web\core\stubs\StubPathRegistry.cs" />
     <Compile Include="web\core\stubs\StubRequestFactory.cs" />
