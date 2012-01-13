@@ -140,7 +140,6 @@
     <Compile Include="StartupFacilitiesSpecs.cs" />
     <Compile Include="StartupPipelineProviderSpecs.cs" />
     <Compile Include="StartupSpecs.cs" />
-    <Compile Include="TimedStorySpecs.cs" />
     <Compile Include="TypeMatcherFactorySpecs.cs" />
     <Compile Include="ViewASpecs.cs" />
     <Compile Include="FrontControllerSpecs.cs" />

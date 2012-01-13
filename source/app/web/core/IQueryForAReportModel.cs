@@ -1,6 +1,6 @@
 namespace app.web.core
 {
-  public interface IFetchA<ReportModel>
+  public interface IQueryForAReportModel<out ReportModel>
   {
     ReportModel fetch_using(IProvideDetailsToCommands request);
   }

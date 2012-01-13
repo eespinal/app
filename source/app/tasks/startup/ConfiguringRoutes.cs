@@ -24,7 +24,7 @@ namespace app.tasks.startup
     }
   }
 
-  public class GetDepartmentProducts : IFetchA<IEnumerable<Product>>
+  public class GetDepartmentProducts : IQueryForAReportModel<IEnumerable<Product>>
   {
     public IEnumerable<Product> fetch_using(IProvideDetailsToCommands request)
     {
@@ -32,7 +32,7 @@ namespace app.tasks.startup
     }
   }
 
-  public class GetDepartmentsInDepartment : IFetchA<IEnumerable<Department>>
+  public class GetDepartmentsInDepartment : IQueryForAReportModel<IEnumerable<Department>>
   {
     public IEnumerable<Department> fetch_using(IProvideDetailsToCommands request)
     {
@@ -40,7 +40,7 @@ namespace app.tasks.startup
     }
   }
 
-  public class GetTheMainDepartments : IFetchA<IEnumerable<Department>>
+  public class GetTheMainDepartments : IQueryForAReportModel<IEnumerable<Department>>
   {
     public IEnumerable<Department> fetch_using(IProvideDetailsToCommands request)
     {

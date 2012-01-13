@@ -50,7 +50,7 @@ namespace app.specs
       yield break;
     }
 
-    public void a_report<RequestType, Query, ReportModel>() where Query : IFetchA<ReportModel>
+    public void a_report<RequestType, Query, ReportModel>() where Query : IQueryForAReportModel<ReportModel>
     {
     }
   }

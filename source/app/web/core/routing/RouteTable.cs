@@ -24,9 +24,9 @@ namespace app.web.core.routing
       return routes.GetEnumerator();
     }
 
-    public void a_report<RequestType, Query, ReportModel>() where Query : IFetchA<ReportModel>
+    public void a_report<RequestType, Query, ReportModel>() where Query : IQueryForAReportModel<ReportModel>
     {
-      var item = new ViewA<ReportModel>(container.an<IDisplayReports>(),
+      var item = new ViewAReportModel<ReportModel>(container.an<IDisplayReports>(),
                                         container.an<Query>());
 
       routes.Add(new RequestHandler(match.made_for<RequestType>(), item));

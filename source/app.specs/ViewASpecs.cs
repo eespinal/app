@@ -7,11 +7,11 @@ using developwithpassion.specifications.rhinomocks;
 
 namespace app.specs
 {
-  [Subject(typeof(ViewA<StubModel>))]
+  [Subject(typeof(ViewAReportModel<StubModel>))]
   public class ViewASpecs
   {
     public abstract class concern : Observes<ISupportAStory,
-                                      ViewA<StubModel>>
+                                      ViewAReportModel<StubModel>>
     {
     }
 
@@ -26,7 +26,7 @@ namespace app.specs
         display_engine = depends.on<IDisplayReports>();
         the_request = fake.an<IProvideDetailsToCommands>();
         report = new StubModel();
-        report_engine = depends.on<IFetchA<StubModel>>();
+        report_engine = depends.on<IQueryForAReportModel<StubModel>>();
         report_engine.setup(x => x.fetch_using(the_request)).Return(report);
       };
 
@@ -39,7 +39,7 @@ namespace app.specs
       static IProvideDetailsToCommands the_request;
       static IDisplayReports display_engine;
       static StubModel report;
-      static IFetchA<StubModel> report_engine;
+      static IQueryForAReportModel<StubModel> report_engine;
     }
   }
 }

@@ -63,7 +63,7 @@ namespace app.specs
         var handler = items.First().ShouldBeAn<RequestHandler>();
         handler.request_criteria.ShouldEqual(request_criteria);
 
-        var feature = handler.application_feature.ShouldBeAn<ViewA<StubReportModel>>();
+        var feature = handler.application_feature.ShouldBeAn<ViewAReportModel<StubReportModel>>();
         feature.report_query.ShouldEqual(the_query);
         feature.display_engine.ShouldEqual(reports);
       };
@@ -82,7 +82,7 @@ namespace app.specs
   {
   }
 
-  public class StubQuery : IFetchA<StubReportModel>
+  public class StubQuery : IQueryForAReportModel<StubReportModel>
   {
     public StubReportModel fetch_using(IProvideDetailsToCommands request)
     {

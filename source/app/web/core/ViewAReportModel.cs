@@ -1,13 +1,13 @@
 using app.web.core.rendering;
 
-namespace app.web.core.aspnet.rendering
+namespace app.web.core
 {
-  public class ViewA<Report> : ISupportAStory
+  public class ViewAReportModel<ReportModel> : ISupportAStory
   {
     public IDisplayReports display_engine;
-    public IFetchA<Report> report_query;
+    public IQueryForAReportModel<ReportModel> report_query;
 
-    public ViewA(IDisplayReports displayEngine, IFetchA<Report> report_query)
+    public ViewAReportModel(IDisplayReports displayEngine, IQueryForAReportModel<ReportModel> report_query)
     {
       display_engine = displayEngine;
       this.report_query = report_query;
