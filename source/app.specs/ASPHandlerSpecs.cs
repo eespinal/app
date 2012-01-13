@@ -7,8 +7,8 @@
  using developwithpassion.specifications.extensions;
 
 namespace app.specs
-{  
-  [Subject(typeof(ASPHandler))]  
+{
+    [Subject(typeof(ASPHandler))]  
   public class ASPHandlerSpecs
   {
     public abstract class concern : Observes<IHttpHandler,

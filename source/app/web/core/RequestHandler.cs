@@ -2,8 +2,8 @@
 {
   public class RequestHandler : IProcessASingleRequest
   {
-    ISupportAStory application_feature;
-    RequestCriteria request_criteria;
+    public ISupportAStory application_feature;
+    public RequestCriteria request_criteria;
 
     public RequestHandler(RequestCriteria request_criteria, ISupportAStory application_feature)
     {

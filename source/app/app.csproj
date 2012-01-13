@@ -144,7 +144,7 @@
     <Compile Include="web\core\IProcessASingleRequest.cs" />
     <Compile Include="web\core\IProcessRequests .cs" />
     <Compile Include="web\core\IProvideDetailsToCommands.cs" />
-    <Compile Include="web\core\IRegisterRoutes .cs" />
+    <Compile Include="web\core\IRegisterRoutes.cs" />
     <Compile Include="web\core\ISupportAStory.cs" />
     <Compile Include="web\core\RequestCriteria.cs" />
     <Compile Include="web\core\RequestHandler.cs" />
