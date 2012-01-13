@@ -173,6 +173,7 @@
     <Compile Include="web\core\stubs\StubMissingCommand.cs" />
     <Compile Include="web\core\stubs\StubRequestFactory.cs" />
     <Compile Include="web\core\stubs\StubRequestMatchBuilder.cs" />
+    <Compile Include="web\core\urls\Url.cs" />
     <Compile Include="web\core\ViewAReportModel.cs" />
   </ItemGroup>
   <ItemGroup>

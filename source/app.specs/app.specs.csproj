@@ -141,6 +141,7 @@
     <Compile Include="StartupPipelineProviderSpecs.cs" />
     <Compile Include="StartupSpecs.cs" />
     <Compile Include="TypeMatcherFactorySpecs.cs" />
+    <Compile Include="UrlSpecs.cs" />
     <Compile Include="ViewASpecs.cs" />
     <Compile Include="FrontControllerSpecs.cs" />
     <Compile Include="MessageGeneratorSpecs.cs" />
