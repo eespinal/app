@@ -2,8 +2,8 @@ namespace app.web.core
 {
   public class ViewA<Report> : ISupportAStory
   {
-    IDisplayReports display_engine;
-    IFetchA<Report> report_query;
+    public IDisplayReports display_engine;
+    public IFetchA<Report> report_query;
 
     public ViewA(IDisplayReports displayEngine, IFetchA<Report> report_query)
     {

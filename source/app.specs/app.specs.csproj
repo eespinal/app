@@ -127,7 +127,7 @@
     <Compile Include="IncomingRequestSpecs.cs" />
     <Compile Include="DependencyFactorySpecs.cs" />
     <Compile Include="LazyContainerSpecs.cs" />
-    <Compile Include="RegisterRoutesSpecs.cs" />
+    <Compile Include="RouteTableSpecs.cs" />
     <Compile Include="RoutesSpecs.cs" />
     <Compile Include="StartupPipelineBuilderSpecs.cs" />
     <Compile Include="SimpleFactorySpecs.cs" />

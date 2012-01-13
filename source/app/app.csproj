@@ -80,8 +80,10 @@
     <Compile Include="MessageGenerator.cs" />
     <Compile Include="tasks\startup\CombinedStep.cs" />
     <Compile Include="tasks\startup\ConfigureCoreServices.cs" />
+    <Compile Include="tasks\startup\ConfigureQueries.cs" />
     <Compile Include="tasks\startup\ConfigureTheFrontController.cs" />
     <Compile Include="tasks\startup\ConfiguringRoutes.cs" />
+    <Compile Include="tasks\startup\ISpecifyARequestToReportMapping.cs" />
     <Compile Include="tasks\startup\StartupStepFactory.cs" />
     <Compile Include="tasks\startup\GetStartupPipelineBuilder.cs" />
     <Compile Include="tasks\startup\IBuildStartupPipelines.cs" />
@@ -147,15 +149,15 @@
     <Compile Include="web\core\IProvideDetailsToCommands.cs" />
     <Compile Include="web\core\IRegisterRoutes.cs" />
     <Compile Include="web\core\ISupportAStory.cs" />
+    <Compile Include="web\core\RouteTable.cs" />
     <Compile Include="web\core\RequestCriteria.cs" />
     <Compile Include="web\core\RequestHandler.cs" />
     <Compile Include="web\core\requestmatching\IBuildRequestMatchers.cs" />
     <Compile Include="web\core\requestmatching\IncomingRequest.cs" />
     <Compile Include="web\core\requestmatching\RequestBuilderFactory.cs" />
     <Compile Include="web\core\Routes.cs" />
-    <Compile Include="web\core\stubs\StubMissingCommand.cs" />
-    <Compile Include="web\core\stubs\StubPathRegistry.cs" />
     <Compile Include="web\core\stubs\StubRequestFactory.cs" />
+    <Compile Include="web\core\stubs\StubRequestMatchBuilder.cs" />
     <Compile Include="web\core\ViewA.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using app.utility;
 using app.web.application.catalogbrowing;
+using app.web.application.catalogbrowing.stubs;
 using app.web.core;
 
 namespace app.tasks.startup
@@ -15,15 +17,33 @@ namespace app.tasks.startup
 
     public void run()
     {
-      Routes.register.a_report<ViewTheMainDepartmentsRequest, First, IEnumerable<Department>>();
+      Routes.register.a_report<ViewTheMainDepartmentsRequest, GetTheMainDepartments, IEnumerable<Department>>();
+      Routes.register.a_report <ViewTheDepartmentsInADepartmentRequest, GetDepartmentsInDepartment, IEnumerable<Department>>();
+      Routes.register.a_report<ViewTheProductsInADepartmentRequest, GetDepartmentProducts, IEnumerable<Product>>();
     }
   }
 
-  public class First : IFetchA<IEnumerable<Department>>
+  public class GetDepartmentProducts : IFetchA<IEnumerable<Product>>
+  {
+    public IEnumerable<Product> fetch_using(IProvideDetailsToCommands request)
+    {
+      return Stub.with<StubStoreCatalog>().get_products_of(request.map<Department>());
+    }
+  }
+
+  public class GetDepartmentsInDepartment : IFetchA<IEnumerable<Department>>
   {
     public IEnumerable<Department> fetch_using(IProvideDetailsToCommands request)
     {
-      throw new System.NotImplementedException();
+      return Stub.with<StubStoreCatalog>().get_sub_departments_of(request.map<Department>());
+    }
+  }
+
+  public class GetTheMainDepartments : IFetchA<IEnumerable<Department>>
+  {
+    public IEnumerable<Department> fetch_using(IProvideDetailsToCommands request)
+    {
+      return Stub.with<StubStoreCatalog>().get_the_main_departments();
     }
   }
 }

@@ -1,8 +1,10 @@
-﻿using Machine.Specifications;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using Machine.Specifications;
 using app.specs.utility;
 using app.web.core;
 using developwithpassion.specifications.rhinomocks;
-using developwithpassion.specifications.extensions;
 
 namespace app.specs
 {
@@ -11,14 +13,14 @@ namespace app.specs
   {
     public abstract class concern : Observes
     {
-
     }
 
     public class when_accessing_route_registration : concern
     {
       Establish c = () =>
       {
-        route_table = ObjectFactory.container.scaffold(spec, fake).an<IRegisterRoutes>();
+        fake_routes = new FakeRoutes();
+        route_table = ObjectFactory.container.scaffold(spec, fake).an(fake_routes);
       };
 
       Because b = () =>
@@ -29,6 +31,25 @@ namespace app.specs
 
       static IRegisterRoutes result;
       static IRegisterRoutes route_table;
+      static IRegisterRoutes fake_routes;
+    }
+  }
+
+  class FakeRoutes : IRegisterRoutes
+  {
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+      return GetEnumerator();
+    }
+
+    public IEnumerator<IProcessASingleRequest> GetEnumerator()
+    {
+      yield break;
+    }
+
+    public void a_report<RequestType, Query, ReportModel>() where Query : IFetchA<ReportModel>
+    {
+
     }
   }
 }
