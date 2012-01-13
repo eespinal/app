@@ -79,6 +79,7 @@
   <ItemGroup>
     <Compile Include="MessageGenerator.cs" />
     <Compile Include="tasks\startup\CombinedStep.cs" />
+    <Compile Include="tasks\startup\ConfigureCoreServices.cs" />
     <Compile Include="tasks\startup\ConfigureTheFrontController.cs" />
     <Compile Include="tasks\startup\ConfiguringRoutes.cs" />
     <Compile Include="tasks\startup\StartupStepFactory.cs" />

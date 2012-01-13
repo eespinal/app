@@ -28,23 +28,33 @@ namespace app.tasks.startup
 
     public class for_pipeline
     {
+      public static IFetchDependencies create_main_container_using(IEnumerable<ICreateASingleDependency> dependencies)
+      {
+        return new DependencyContainer(new DependencyFactoryRegistry(dependencies,
+                                                                     exception_factories.
+                                                                       dependency_factory_not_registered),
+                                       exception_factories.dependency_creation);
+      }
+      static ICreateDependencyFactories create_factories_provider()
+      {
+        return new DependencyFactoriesProvider(new LazyContainer(), new GreediestCtorPicker());
+      }
+
+      static IProvideStartupFacilities create_facilities()
+      {
+        return new StartupFacilities(new List<ICreateASingleDependency>(),
+                                     create_factories_provider(), new TypeMatcherFactory());
+      }
+      static ChainBuilderProvider create_pipeline_builder_provider()
+      {
+        return new ChainBuilderProvider(new StartupStepFactory(create_facilities(), exception_factories.startup_convention_not_followed));
+      }
+
       public static GetStartupPipelineBuilder pipeline_builder_factory = () =>
       {
-        IProvideStartupFacilities facilities = new StartupFacilities(new List<ICreateASingleDependency>(),
-                                                                     new DependencyFactoriesProvider(new LazyContainer(),
-                                                                                                     new GreediestCtorPicker
-                                                                                                       ()),
-                                                                     new TypeMatcherFactory());
-
-        var container = new DependencyContainer(
-          new DependencyFactoryRegistry(facilities, exception_factories.dependency_factory_not_registered),
-          exception_factories.dependency_creation);
-
-        var builder_provider = new ChainBuilderProvider(
-        new StartupStepFactory(facilities, exception_factories.startup_convention_not_followed));
-
-        return new StartupPipelineProvider(builder_provider);
+        return new StartupPipelineProvider(create_pipeline_builder_provider());
       };
+
     }
   }
 }
