@@ -14,3 +14,4 @@ namespace app.web.core.urls
       }
     }
   }
+}
