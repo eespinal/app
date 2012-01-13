@@ -2,12 +2,19 @@
 using System.Collections.Generic;
 using app.utility.containers.basic;
 using app.utility.containers.core;
+using app.utility.logger;
 using app.web.core.aspnet;
 
 namespace app.tasks.startup
 {
   public class StartupItems
   {
+    public class logging_formats
+    {
+      public static LogMessageFormatter basic = (type, message) =>
+        string.Format("{0} - {1}", type.Name, message);
+
+    }
     public class exception_factories
     {
       public static MissingDependencyFactory dependency_factory_not_registered = (type) =>

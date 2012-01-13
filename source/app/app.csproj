@@ -80,6 +80,7 @@
     <Compile Include="MessageGenerator.cs" />
     <Compile Include="tasks\startup\CombinedStep.cs" />
     <Compile Include="tasks\startup\ConfigureCoreServices.cs" />
+    <Compile Include="tasks\startup\ConfigureLogging.cs" />
     <Compile Include="tasks\startup\ConfigureQueries.cs" />
     <Compile Include="tasks\startup\ConfigureTheFrontController.cs" />
     <Compile Include="tasks\startup\ConfiguringRoutes.cs" />
@@ -121,6 +122,16 @@
     <Compile Include="utility\containers\basic\MissingDependencyFactory.cs" />
     <Compile Include="utility\containers\core\IPickTheCtorOnTheType.cs" />
     <Compile Include="utility\IRunABehaviour.cs" />
+    <Compile Include="utility\logger\CallingTypeResolver.cs" />
+    <Compile Include="utility\logger\ICreateLoggers.cs" />
+    <Compile Include="utility\logger\ILog.cs" />
+    <Compile Include="utility\logger\IResolveTheCallingType.cs" />
+    <Compile Include="utility\logger\Log.cs" />
+    <Compile Include="utility\logger\LogMessageFormatter.cs" />
+    <Compile Include="utility\logger\TextWriterLogger.cs" />
+    <Compile Include="utility\logger\MessageWritter.cs" />
+    <Compile Include="utility\logger\TextWriterLoggerFactory.cs" />
+    <Compile Include="utility\logger\LogWriterFactory.cs" />
     <Compile Include="utility\Stub.cs" />
     <Compile Include="web\application\catalogbrowing\Department.cs" />
     <Compile Include="web\application\catalogbrowing\IFindInformationInTheStore.cs" />

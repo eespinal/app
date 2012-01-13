@@ -115,6 +115,7 @@
   <ItemGroup>
     <Compile Include="ASPHandlerSpecs.cs" />
     <Compile Include="AutomaticDependencyFactorySpecs.cs" />
+    <Compile Include="CallingTypeResolverSpecs.cs" />
     <Compile Include="ChainBuilderProviderSpecs.cs" />
     <Compile Include="CommandRegistrySpecs.cs" />
     <Compile Include="ContainerSpecs.cs" />
@@ -127,9 +128,11 @@
     <Compile Include="IncomingRequestSpecs.cs" />
     <Compile Include="DependencyFactorySpecs.cs" />
     <Compile Include="LazyContainerSpecs.cs" />
-    <Compile Include="PathRegistrySpecs.cs" />
-    <Compile Include="RouteTableSpecs.cs" />
+    <Compile Include="TextWriterLoggerFactorySpecs.cs" />
+    <Compile Include="TextWriterLoggerSpecs.cs" />
+    <Compile Include="LogSpecs.cs" />
     <Compile Include="RoutesSpecs.cs" />
+    <Compile Include="RouteTableSpecs.cs" />
     <Compile Include="StartupPipelineBuilderSpecs.cs" />
     <Compile Include="SimpleFactorySpecs.cs" />
     <Compile Include="StartSpecs.cs" />

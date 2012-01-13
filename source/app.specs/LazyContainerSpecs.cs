@@ -22,7 +22,10 @@ namespace app.specs
     {
       Establish c = () =>
       {
-        the_connection  =ObjectFactory.container.scaffold(spec, fake).an<IDbConnection>();
+        using (var scaffold = ObjectFactory.container.scaffold(spec, fake))
+        {
+          the_connection = scaffold.an<IDbConnection>();
+        }
       };
 
       Because b = () =>

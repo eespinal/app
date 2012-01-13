@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using Machine.Specifications;
 using app.specs.utility;
@@ -20,7 +19,10 @@ namespace app.specs
       Establish c = () =>
       {
         fake_routes = new FakeRoutes();
-        route_table = ObjectFactory.container.scaffold(spec, fake).an(fake_routes);
+        using (var scaffold = ObjectFactory.container.scaffold(spec, fake))
+        {
+          route_table = scaffold.an(fake_routes);
+        }
       };
 
       Because b = () =>
@@ -49,7 +51,6 @@ namespace app.specs
 
     public void a_report<RequestType, Query, ReportModel>() where Query : IFetchA<ReportModel>
     {
-
     }
   }
 }

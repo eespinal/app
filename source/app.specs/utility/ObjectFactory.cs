@@ -29,28 +29,30 @@ namespace app.specs.utility
 
     public class container
     {
-      public class ContainerScaffold
+      public class ContainerScaffold : IDisposable
       {
         readonly IConfigureSpecifications spec;
         readonly ICreateFakes fake;
+        IFetchDependencies the_container;
 
         public ContainerScaffold(IConfigureSpecifications spec, ICreateFakes fake)
         {
           this.spec = spec;
           this.fake = fake;
+          the_container = fake.an<IFetchDependencies>();
         }
 
         public TheDependency an<TheDependency>(TheDependency instance) 
         {
-          var the_container = fake.an<IFetchDependencies>();
-          ContainerFacadeResolver resolver = () => the_container;
-
           var dependency = instance;
           the_container.setup(x => x.an<TheDependency>()).Return(dependency);
-
-          spec.change(() => Container.facade_resolver).to(resolver);
-
           return dependency;
+        }
+
+        public void Dispose()
+        {
+          ContainerFacadeResolver resolver = () => the_container;
+          spec.change(() => Container.facade_resolver).to(resolver);
         }
 
         public TheDependency an<TheDependency>() where TheDependency : class

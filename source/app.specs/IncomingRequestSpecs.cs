@@ -17,7 +17,10 @@ namespace app.specs
     {
       Establish c = () =>
       {
-        builder = ObjectFactory.container.scaffold(spec, fake).an<IBuildRequestMatchers>();
+        using (var scaffold = ObjectFactory.container.scaffold(spec, fake))
+        {
+          builder = scaffold.an<IBuildRequestMatchers>();
+        }
       };
 
       Because b = () =>
