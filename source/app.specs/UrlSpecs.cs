@@ -12,22 +12,24 @@ namespace app.specs
     {
     }
 
-    public class when_getting_the_url_gateway: concern
+    public class when_getting_the_url_gateway : concern
     {
-        Establish context = () =>
-                                {
-                                    using (var scaffold= ObjectFactory.container.scaffold(spec,fake))
-                                    {
-                                        url_builder = scaffold.an<IUrlBuilder>();
+      Establish context = () =>
+      {
+        using (var scaffold = ObjectFactory.container.scaffold(spec, fake))
+        {
+          url_builder = scaffold.an<IUrlBuilder>();
+        }
+      };
 
-                                    }
-                                };
-        Because of = () => result = Url.to;
+      Because of = () => 
+        result = Url.to;
 
-        It should_return_the_correct_url_builder = () => result.ShouldEqual(url_builder);
+      It should_return_the_correct_url_builder = () => 
+        result.ShouldEqual(url_builder);
 
-        static IUrlBuilder url_builder;
-        static IUrlBuilder result;
+      static IUrlBuilder url_builder;
+      static IUrlBuilder result;
     }
   }
 }
