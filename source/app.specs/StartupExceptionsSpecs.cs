@@ -20,10 +20,7 @@ namespace app.specs
           spec.catch_exception(() => StartupItems.exception_factories.dependency_factory_not_registered(typeof(OurType)));
 
         It should_return_a_block_that_throws_an_exception_with_the_correct_information = () =>
-        {
-          var item = spec.exception_thrown;
-          item.Message.ShouldContain(typeof(OurType).Name);
-        };
+          spec.exception_thrown.Message.ShouldContain(typeof(OurType).Name);
       }
 
       public class for_a_dependency_creation_error
