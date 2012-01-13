@@ -115,6 +115,7 @@
   <ItemGroup>
     <Compile Include="ASPHandlerSpecs.cs" />
     <Compile Include="AutomaticDependencyFactorySpecs.cs" />
+    <Compile Include="ChainBuilderProviderSpecs.cs" />
     <Compile Include="CommandRegistrySpecs.cs" />
     <Compile Include="ContainerSpecs.cs" />
     <Compile Include="CreateStartupStepsSpecs.cs" />

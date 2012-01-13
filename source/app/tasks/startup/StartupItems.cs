@@ -27,5 +27,3 @@ namespace app.tasks.startup
     }
   }
 }
-
-}
