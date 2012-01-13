@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace app.utility.logger
+namespace app.utility.logger.basic
 {
   public delegate TextWriter LogWriterFactory();
 }

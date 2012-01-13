@@ -4,6 +4,8 @@ using System.Web;
 using System.Web.Compilation;
 using app.utility.containers.core;
 using app.utility.logger;
+using app.utility.logger.basic;
+using app.utility.logger.core;
 using app.web.core;
 using app.web.core.aspnet;
 using app.web.core.requestmatching;

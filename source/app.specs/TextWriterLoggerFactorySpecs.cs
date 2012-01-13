@@ -2,6 +2,8 @@
  using System.IO;
  using Machine.Specifications;
  using app.utility.logger;
+ using app.utility.logger.basic;
+ using app.utility.logger.core;
  using developwithpassion.specifications.rhinomocks;
  using developwithpassion.specifications.extensions;
 

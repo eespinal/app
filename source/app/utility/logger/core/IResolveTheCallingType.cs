@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace app.utility.logger
+namespace app.utility.logger.core
 {
   public interface IResolveTheCallingType
   {

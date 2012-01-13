@@ -122,16 +122,16 @@
     <Compile Include="utility\containers\basic\MissingDependencyFactory.cs" />
     <Compile Include="utility\containers\core\IPickTheCtorOnTheType.cs" />
     <Compile Include="utility\IRunABehaviour.cs" />
-    <Compile Include="utility\logger\CallingTypeResolver.cs" />
-    <Compile Include="utility\logger\ICreateLoggers.cs" />
-    <Compile Include="utility\logger\ILog.cs" />
-    <Compile Include="utility\logger\IResolveTheCallingType.cs" />
-    <Compile Include="utility\logger\Log.cs" />
-    <Compile Include="utility\logger\LogMessageFormatter.cs" />
-    <Compile Include="utility\logger\TextWriterLogger.cs" />
-    <Compile Include="utility\logger\MessageWritter.cs" />
-    <Compile Include="utility\logger\TextWriterLoggerFactory.cs" />
-    <Compile Include="utility\logger\LogWriterFactory.cs" />
+    <Compile Include="utility\logger\core\CallingTypeResolver.cs" />
+    <Compile Include="utility\logger\core\ICreateLoggers.cs" />
+    <Compile Include="utility\logger\core\ILog.cs" />
+    <Compile Include="utility\logger\core\IResolveTheCallingType.cs" />
+    <Compile Include="utility\logger\core\Log.cs" />
+    <Compile Include="utility\logger\basic\LogMessageFormatter.cs" />
+    <Compile Include="utility\logger\basic\TextWriterLogger.cs" />
+    <Compile Include="utility\logger\basic\MessageWritter.cs" />
+    <Compile Include="utility\logger\basic\TextWriterLoggerFactory.cs" />
+    <Compile Include="utility\logger\basic\LogWriterFactory.cs" />
     <Compile Include="utility\Stub.cs" />
     <Compile Include="web\application\catalogbrowing\Department.cs" />
     <Compile Include="web\application\catalogbrowing\IFindInformationInTheStore.cs" />
@@ -174,6 +174,9 @@
     <Compile Include="web\core\stubs\StubRequestFactory.cs" />
     <Compile Include="web\core\stubs\StubRequestMatchBuilder.cs" />
     <Compile Include="web\core\ViewA.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="utility\logger\log4net\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

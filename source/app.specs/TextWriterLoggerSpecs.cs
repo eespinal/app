@@ -4,6 +4,8 @@ using System.IO;
 using System.Text;
 using Machine.Specifications;
 using app.utility.logger;
+using app.utility.logger.basic;
+using app.utility.logger.core;
 using developwithpassion.specifications.rhinomocks;
 
 namespace app.specs

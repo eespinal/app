@@ -1,4 +1,4 @@
-namespace app.utility.logger
+namespace app.utility.logger.basic
 {
     public delegate void MessageWritter(string message);
 }

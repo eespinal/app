@@ -1,5 +1,7 @@
 ﻿using System;
 using app.utility.logger;
+using app.utility.logger.basic;
+using app.utility.logger.core;
 
 namespace app.tasks.startup
 {

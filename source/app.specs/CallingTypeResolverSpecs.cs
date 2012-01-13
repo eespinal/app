@@ -1,6 +1,7 @@
 ﻿using System;
 using Machine.Specifications;
 using app.utility.logger;
+using app.utility.logger.core;
 using developwithpassion.specifications.rhinomocks;
 
 namespace app.specs

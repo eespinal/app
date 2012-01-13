@@ -1,6 +1,7 @@
 ﻿using System;
+using app.utility.logger.core;
 
-namespace app.utility.logger
+namespace app.utility.logger.basic
 {
   public class TextWriterLoggerFactory : ICreateLoggers
   {

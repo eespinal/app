@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 
-namespace app.utility.logger
+namespace app.utility.logger.core
 {
   public class CallingTypeResolver : IResolveTheCallingType
   {

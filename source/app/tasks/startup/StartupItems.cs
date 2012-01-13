@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using app.utility.containers.basic;
 using app.utility.containers.core;
 using app.utility.logger;
+using app.utility.logger.basic;
 using app.web.core.aspnet;
 
 namespace app.tasks.startup

@@ -1,6 +1,6 @@
 ﻿using app.utility.containers.core;
 
-namespace app.utility.logger
+namespace app.utility.logger.core
 {
   public class Log
   {
