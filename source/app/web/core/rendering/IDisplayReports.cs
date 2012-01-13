@@ -1,4 +1,4 @@
-﻿namespace app.web.core
+﻿namespace app.web.core.rendering
 {
   public interface IDisplayReports
   {

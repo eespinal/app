@@ -122,6 +122,7 @@
     <Compile Include="utility\containers\basic\MissingDependencyFactory.cs" />
     <Compile Include="utility\containers\core\IPickTheCtorOnTheType.cs" />
     <Compile Include="utility\IRunABehaviour.cs" />
+    <Compile Include="utility\ITime.cs" />
     <Compile Include="utility\logger\core\CallingTypeResolver.cs" />
     <Compile Include="utility\logger\core\ICreateLoggers.cs" />
     <Compile Include="utility\logger\core\ILog.cs" />
@@ -173,6 +174,7 @@
     <Compile Include="web\core\stubs\StubMissingCommand.cs" />
     <Compile Include="web\core\stubs\StubRequestFactory.cs" />
     <Compile Include="web\core\stubs\StubRequestMatchBuilder.cs" />
+    <Compile Include="web\core\TimedStory.cs" />
     <Compile Include="web\core\ViewA.cs" />
   </ItemGroup>
   <ItemGroup>

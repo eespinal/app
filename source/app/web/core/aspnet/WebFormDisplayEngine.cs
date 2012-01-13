@@ -1,4 +1,6 @@
-﻿namespace app.web.core.aspnet
+﻿using app.web.core.rendering;
+
+namespace app.web.core.aspnet
 {
   public class WebFormDisplayEngine : IDisplayReports
   {

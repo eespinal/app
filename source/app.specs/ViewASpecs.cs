@@ -1,6 +1,7 @@
 ﻿using Machine.Specifications;
 using app.web.application.catalogbrowing;
 using app.web.core;
+using app.web.core.rendering;
 using developwithpassion.specifications.extensions;
 using developwithpassion.specifications.rhinomocks;
 

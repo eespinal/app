@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using app.utility.containers.core;
+using app.web.core.rendering;
 using app.web.core.requestmatching;
 
-namespace app.web.core
+namespace app.web.core.routing
 {
   public class RouteTable : IRegisterRoutes
   {

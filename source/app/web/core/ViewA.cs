@@ -1,4 +1,6 @@
-namespace app.web.core
+using app.web.core.rendering;
+
+namespace app.web.core.aspnet.rendering
 {
   public class ViewA<Report> : ISupportAStory
   {

@@ -3,6 +3,7 @@ using app.utility;
 using app.web.application.catalogbrowing;
 using app.web.application.catalogbrowing.stubs;
 using app.web.core;
+using app.web.core.routing;
 
 namespace app.tasks.startup
 {

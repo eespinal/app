@@ -4,7 +4,9 @@ using System.Linq;
 using Machine.Specifications;
 using app.utility.containers.core;
 using app.web.core;
+using app.web.core.rendering;
 using app.web.core.requestmatching;
+using app.web.core.routing;
 using developwithpassion.specifications.rhinomocks;
 using developwithpassion.specifications.extensions;
 
