@@ -135,6 +135,9 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="web\core\aspnet\IFindPathsToTemplates.cs" />
+    <Compile Include="web\core\aspnet\IRegisterPaths.cs" />
+    <Compile Include="web\core\aspnet\PathRegistry.cs" />
+    <Compile Include="web\core\aspnet\TemplatePathAlreadyRegisteredExceptionFactory.cs" />
     <Compile Include="web\core\aspnet\WebFormDisplayEngine.cs" />
     <Compile Include="web\core\aspnet\WebFormFactory.cs" />
     <Compile Include="web\core\aspnet\WebFormViewFactory.cs" />
@@ -156,6 +159,7 @@
     <Compile Include="web\core\requestmatching\IncomingRequest.cs" />
     <Compile Include="web\core\requestmatching\RequestBuilderFactory.cs" />
     <Compile Include="web\core\Routes.cs" />
+    <Compile Include="web\core\stubs\StubMissingCommand.cs" />
     <Compile Include="web\core\stubs\StubRequestFactory.cs" />
     <Compile Include="web\core\stubs\StubRequestMatchBuilder.cs" />
     <Compile Include="web\core\ViewA.cs" />

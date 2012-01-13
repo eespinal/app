@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using app.utility.containers.basic;
 using app.utility.containers.core;
+using app.web.core.aspnet;
 
 namespace app.tasks.startup
 {
@@ -23,6 +24,12 @@ namespace app.tasks.startup
       {
         throw new NotImplementedException(String.Format(
           "The type {0} does not follow the conventions of a startup step", type.Name));
+      };
+
+      public static TemplatePathAlreadyRegisteredExceptionFactory path_already_registered = report_model_type =>
+      {
+        throw new NotImplementedException(String.Format(
+          "There is already a template registered for {0}", report_model_type.Name));
       };
     }
 
