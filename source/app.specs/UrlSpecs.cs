@@ -1,4 +1,5 @@
 ﻿using Machine.Specifications;
+using app.specs.utility;
 using app.web.core.urls;
 using developwithpassion.specifications.rhinomocks;
 
@@ -11,9 +12,22 @@ namespace app.specs
     {
     }
 
-    public class when_observation_name : concern
+    public class when_getting_the_url_gateway: concern
     {
-      It first_observation = () => 
+        Establish context = () =>
+                                {
+                                    using (var scaffold= ObjectFactory.container.scaffold(spec,fake))
+                                    {
+                                        url_builder = scaffold.an<IUrlBuilder>();
+
+                                    }
+                                };
+        Because of = () => result = Url.to;
+
+        It should_return_the_correct_url_builder = () => result.ShouldEqual(url_builder);
+
+        static IUrlBuilder url_builder;
+        static IUrlBuilder result;
     }
   }
 }
