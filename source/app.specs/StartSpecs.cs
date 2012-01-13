@@ -13,7 +13,8 @@ namespace app.specs
       Establish context = () =>
       {
         pipeline_builders_builder = fake.an<ICreateStartupPipelineBuilders>();
-        Start.factory = () => pipeline_builders_builder;
+        GetStartupPipelineBuilder factory = () => pipeline_builders_builder;
+        spec.change(() => Start.factory).to(factory);
       };
 
       Because of = () => result = Start.by;
@@ -23,23 +24,19 @@ namespace app.specs
       static ICreateStartupPipelineBuilders pipeline_builders_builder;
     }
 
-    public class integration
+    public class when_composing_a_pipeline_at_runtime
     {
-      public class when_composing_a_pipeline_at_runtime
+      Because b = () =>
       {
-        Because b = () =>
-        {
-          Start.by.running<FirstStep>()
-            .end_with<SecondStep>();
-        };
+        Start.by.running<FirstStep>()
+          .end_with<SecondStep>();
+      };
 
-        It should_run_all_steps = () =>
-        {
-          FirstStep.ran.ShouldBeTrue();
-          SecondStep.ran.ShouldBeTrue();
-        };
-           
-      } 
+      It should_run_all_steps = () =>
+      {
+        FirstStep.ran.ShouldBeTrue();
+        SecondStep.ran.ShouldBeTrue();
+      };
     }
 
     public class SecondStep : IRunAStartupStep
