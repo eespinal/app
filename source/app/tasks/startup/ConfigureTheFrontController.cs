@@ -1,7 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Web;
 using System.Web.Compilation;
 using app.utility;
+using app.utility.logger;
 using app.web.core;
 using app.web.core.aspnet;
 using app.web.core.stubs;
@@ -23,6 +25,8 @@ namespace app.tasks.startup
       startup_facility.register_factory_for<IFindCommands, CommandRegistry>();
       startup_facility.register_instance_for<WebFormFactory>(BuildManager.CreateInstanceFromVirtualPath);
       startup_facility.register_instance_for<GetTheActiveHttpContext>(() => HttpContext.Current);
+      startup_facility.register_instance_for<MessageWritter>(Console.WriteLine);
+      startup_facility.register_factory_for<ILogInformation, Logger>();
       startup_facility.register_factory_for<IDisplayReports, WebFormDisplayEngine>();
       startup_facility.register_factory_for<IProcessASingleRequest, StubMissingCommand>();
       startup_facility.register_factory_for<ICreateRequests, StubRequestFactory>();

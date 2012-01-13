@@ -127,6 +127,8 @@
     <Compile Include="IncomingRequestSpecs.cs" />
     <Compile Include="DependencyFactorySpecs.cs" />
     <Compile Include="LazyContainerSpecs.cs" />
+    <Compile Include="LoggerSpecs.cs" />
+    <Compile Include="LogSpecs.cs" />
     <Compile Include="RegisterRoutesSpecs.cs" />
     <Compile Include="RoutesSpecs.cs" />
     <Compile Include="StartupPipelineBuilderSpecs.cs" />

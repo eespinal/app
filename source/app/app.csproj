@@ -119,6 +119,10 @@
     <Compile Include="utility\containers\basic\MissingDependencyFactory.cs" />
     <Compile Include="utility\containers\core\IPickTheCtorOnTheType.cs" />
     <Compile Include="utility\IRunABehaviour.cs" />
+    <Compile Include="utility\logger\ILogInformation.cs" />
+    <Compile Include="utility\logger\Log.cs" />
+    <Compile Include="utility\logger\Logger.cs" />
+    <Compile Include="utility\logger\MessageWritter.cs" />
     <Compile Include="utility\Stub.cs" />
     <Compile Include="web\application\catalogbrowing\Department.cs" />
     <Compile Include="web\application\catalogbrowing\IFindInformationInTheStore.cs" />
